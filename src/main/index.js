@@ -1,10 +1,10 @@
 import React from 'react';
+import './main.css';
 
 const MainPage = () => {
+    
     return (
-        <div>
-            <h2>Welcome</h2>
-            <h1>WANNASEE?</h1>
+        <div id="mainpage">
             <video loop autoPlay muted>
                 <source src="bts.mp4" type="video/mp4"/>
             </video>

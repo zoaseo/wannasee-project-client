@@ -1,0 +1,45 @@
+#top_header {
+    height: 50px;
+    background-color: black; 
+    color: white;
+}
+#top_header .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#top_header #ticket_icon {
+    margin-top: 7px;
+    width: 38px;
+    height: 38px;
+}
+#top_header #ticket_icon img {
+    width: 100%;
+}
+#top_header .inner ul {
+    display: flex;
+}
+nav {
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+}
+nav li{
+    padding-left: 55px;
+    height: 35px;
+    line-height: 35px;
+}
+nav #genre {
+    background-color: #53BF9D;
+}
+nav #region {
+    background-color: #F94C66;
+}
+nav #period {
+    background-color: #BD4291;
+}
+nav #welcome {
+    background-color: #FFC54D;
+    /* background-color: #fe651b; */
+    /* background-color: #ff4b01; */
+}
