@@ -1,0 +1,22 @@
+.Genrepage {
+    height: 100vh;
+    background-color: #377d71;
+}
+.Genrepage h1 {
+    padding: 30px 0;
+    font-size: 68px;
+    color: white;
+    text-align: center;
+}
+#genre_div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#genre_ul {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+}

@@ -1,0 +1,22 @@
+.Regionpage {
+    height: 100vh;
+    background-color: #fbc5c5;
+}
+.Regionpage h1 {
+    padding: 30px 0;
+    font-size: 68px;
+    color: white;
+    text-align: center;
+}
+#region_div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#region_ul {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+}

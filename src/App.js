@@ -2,6 +2,9 @@ import './App.css';
 import Header from './components/Header';
 import MainPage from './main/index';
 import { Route, Routes } from 'react-router-dom'
+import GenrePage from './genre';
+import RegionPage from './region';
+import PeriodPage from './period';
 
 function App() {
   return (
@@ -9,6 +12,9 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
+        <Route path="/genre" element={<GenrePage/>}/>
+        <Route path="/region" element={<RegionPage/>}/>
+        <Route path="/period" element={<PeriodPage/>}/>
       </Routes>
     </div>
   );
