@@ -7,8 +7,10 @@ import RegionPage from './region';
 import PeriodPage from './period';
 
 function App() {
+  
   return (
     <div className="App">
+      {/* <div class="cursor"></div> */}
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
