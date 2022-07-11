@@ -1,0 +1,22 @@
+.Periodpage {
+    height: 100vh;
+    background-color: #fba1a1;
+}
+.Periodpage h1 {
+    padding: 30px 0;
+    font-size: 68px;
+    color: white;
+    text-align: center;
+}
+#period_div {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#period_ul {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+}
