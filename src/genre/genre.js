@@ -1,9 +1,9 @@
 import React from 'react';
 
-const GenreComponent = ( {genre} ) => {
+const GenreComponent = ( {concert} ) => {
     return (
         <div>
-            
+            <div>{concert.title}</div>
         </div>
     );
 };

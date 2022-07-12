@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RegionComponent = ({concert} ) => {
+const PeriodComponent = ({concert} ) => {
     return (
         <div>
             <div>{concert.title}</div>
@@ -8,4 +8,4 @@ const RegionComponent = ({concert} ) => {
     );
 };
 
-export default RegionComponent;
+export default PeriodComponent;
