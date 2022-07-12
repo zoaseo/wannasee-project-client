@@ -29,11 +29,11 @@ const GenrePage = () => {
                     <li><Link to='/genre/hiphop'>힙합</Link></li>
                 </ul>
             </div>
-            <div>
+            <ul className='component'>
             {concerts.map(concert=>(
-                        <GenreComponent  key={concert.id} concert={concert}/>
+                        <GenreComponent key={concert.id} concert={concert}/>
                     ))}
-            </div>
+            </ul>
         </div>
     );
 };

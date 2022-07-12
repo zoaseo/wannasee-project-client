@@ -1,10 +1,14 @@
 import React from 'react';
+import './genre.css'
+import GenreTd  from './GenreTd';
 
 const GenreComponent = ( {concert} ) => {
+
     return (
-        <div>
-            <div>{concert.title}</div>
-        </div>
+            <li>
+                <img src={concert.imgsrc} alt="singer_pic" />
+                <span>{concert.title}</span>
+            </li>
     );
 };
 
