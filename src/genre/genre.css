@@ -1,5 +1,4 @@
 .Genrepage {
-    /* height: 100vh; */
     background-color: #377d71;
 }
 .Genrepage h1 {
@@ -20,17 +19,42 @@
     color: white;
     font-size: 18px;
 }
-
 .component {
-    width: 100%;
+    width: 1200px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-}
-.component ul {
     text-align: center;
 }
-.component li {
+#GenreContent {
     width: 33.333%;
+    height: 400px;
+}
+#GenreContent {
+    position: relative;
+    padding-top: 150px;
+}
+#GenreContent div {
+    position: absolute;
+    width: 100%;
+    margin-left: 450px;
+}
+#GenreContent #span_locaion {
+    position: absolute;
+    top: 123px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #FBA1A1;
+    width: 50px;
+    color: black;
+    border-radius: 25px;
+    left: 370px;
+}
+#GenreContent span {
+    position: absolute;
+    top: 450px;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    margin-left: 160px;
 }
