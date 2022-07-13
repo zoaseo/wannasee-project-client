@@ -3,6 +3,8 @@ import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
+import './Detailconcert.css';
+import CounterContainer from './CounterContainer';
 
 const Detailconcert = () => {
     async function getCustomers(id){
@@ -19,8 +21,17 @@ const Detailconcert = () => {
     if(!concert) return <div>로딩중입니다.</div>
 
     return (
-        <div>
-            <div>{concert.title}</div>
+        <div id="detail_concert">
+                <div><span id="span_locaion">{concert.location}</span>
+                <div><img src={`../${concert.imgsrc}`} alt="singer_pic" /></div>
+                <span id="span_title">{concert.title}</span>
+                <div>{concert.singer}</div>
+                <div>{concert.genre}</div>
+                <div>{concert.price}</div>
+                <div>{concert.date}</div>
+                <div>{concert.desc}</div>
+                <CounterContainer/>
+            </div>
         </div>
     );
 };
