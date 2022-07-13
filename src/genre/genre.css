@@ -11,16 +11,22 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
 #genre_ul {
     display: flex;
-    width: 700px;
+    width: 100%;
     justify-content: space-between;
     color: white;
     font-size: 18px;
 }
+#genre_ul li{
+    width: 70px;
+    margin: 0 20px;
+}
 .component {
-    width: 1500px;
+    width: 100%;
+    max-width: 1600px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -42,30 +48,15 @@
     width: 50%;
     margin-left: 25%;
 }
-/* #GenreContent div {
-    position: absolute;
-    width: 100%;
-    margin-left: 450px;
-}
 #GenreContent #span_locaion {
-    position: absolute;
-    top: 123px;
     font-weight: bold;
     font-size: 14px;
     background-color: #FBA1A1;
-    width: 50px;
+    padding: 3px 8px;
     color: black;
     border-radius: 25px;
-    left: 370px;
 }
-#GenreContent span {
-    position: absolute;
-    top: 450px;
+#GenreContent #span_title {
     font-size: 18px;
     color: white;
-    width: 100%;
-    margin-left: 160px;
 }
-#detail {
-    margin-top: 340px;
-} */
