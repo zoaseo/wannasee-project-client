@@ -1,6 +1,6 @@
 import React from 'react';
 import './genre.css'
-import { Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import GenreComponent from './genre';
@@ -12,6 +12,7 @@ async function getConcerts(){
 }
 
 const GenrePage = () => {
+    const { ballad } = useParams();
     const [state] = useAsync(getConcerts, [])
     const { loading, data: concerts, error } = state;
     if(loading) return <div>로딩중 ...</div>
@@ -23,7 +24,7 @@ const GenrePage = () => {
             <div id="genre_div">
                 <ul id="genre_ul">
                     <li><Link to='/genre'>전체보기</Link></li>
-                    <li><Link to='/genre/ballad'>발라드</Link></li>
+                    <li><Link to={`/genre/${ballad}`}>발라드</Link></li>
                     <li><Link to='/genre/trot'>트로트</Link></li>
                     <li><Link to='/genre/rock'>락/메탈</Link></li>
                     <li><Link to='/genre/hiphop'>힙합</Link></li>
@@ -31,7 +32,7 @@ const GenrePage = () => {
             </div>
             <ul className='component'>
             {concerts.map(concert=>(
-                        <GenreComponent key={concert.id} concert={concert}/>
+                        <GenreComponent key={concert.genre} concert={concert}/>
                     ))}
             </ul>
         </div>

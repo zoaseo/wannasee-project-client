@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import GenrePage from './genre';
 import RegionPage from './region';
 import PeriodPage from './period';
+import GenreComponent from './genre/genre';
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage/>}/>
         <Route path="/genre" element={<GenrePage/>}/>
+        <Route path="/genre/:genre" element={<GenreComponent/>}/>
         <Route path="/region" element={<RegionPage/>}/>
         <Route path="/period" element={<PeriodPage/>}/>
       </Routes>
