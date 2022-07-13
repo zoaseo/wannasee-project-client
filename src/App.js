@@ -6,6 +6,7 @@ import GenrePage from './genre';
 import RegionPage from './region';
 import PeriodPage from './period';
 import Detailconcert from './components/Detailconcert';
+import Concert_genre from './genre/index_g';
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage/>}/>
         <Route path="/genre" element={<GenrePage/>}/>
+        <Route path="/genre/:genre" element={<Concert_genre/>}/>
         <Route path="/region" element={<RegionPage/>}/>
         <Route path="/period" element={<PeriodPage/>}/>
         <Route path="/detailview/:id" element={<Detailconcert/>}/>
