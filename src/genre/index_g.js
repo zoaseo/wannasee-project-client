@@ -1,6 +1,6 @@
 import React from 'react';
 import './genre.css'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import GenreComponent from './genre';
@@ -12,7 +12,6 @@ const ConcertGenre = () => {
         return response.data;
     }
     const { genre } = useParams();
-    const navigate = useNavigate();
     const [ state ] = useAsync(()=>getConcerts(genre),[genre]);
     const { loading, data:concerts, error } = state;
     if(loading) return <div>로딩중 ...</div>

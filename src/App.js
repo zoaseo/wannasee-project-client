@@ -7,12 +7,20 @@ import RegionPage from './region';
 import PeriodPage from './period';
 import Detailconcert from './components/Detailconcert';
 import ConcertGenre from './genre/index_g';
+import {Scrollbar} from 'smooth-scrollbar-react';
+import Footer from './components/Footer';
 
 function App() {
-  
+ 
   return (
     <div className="App">
       {/* <div class="cursor"></div> */}
+      <Scrollbar
+          plugins={{
+            overscroll: {
+              effect: 'glow',
+            },
+          }}>
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
@@ -22,6 +30,8 @@ function App() {
         <Route path="/period" element={<PeriodPage/>}/>
         <Route path="/detailview/:id" element={<Detailconcert/>}/>
       </Routes>
+      <Footer/>
+      </Scrollbar>
     </div>
   );
 }

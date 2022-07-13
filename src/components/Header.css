@@ -39,20 +39,21 @@ nav {
     padding-top: 42px;
     font-style: italic;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 44px;
     color: white;
 }
 nav li{
     padding-left: 110px;
-    height: 55px;
-    line-height: 72.5px;
+    height: 50px;
+    line-height: 72px;
     transition: 0.3s;
     /* cursor: pointer; */
     font-family: 'Black Han Sans', sans-serif;
-
+    font-weight: normal;
+    letter-spacing: 3px;
 }
 nav li:hover {
-    height: 70px;
+    height: 64px;
     color: black
 }
 nav #genre {
