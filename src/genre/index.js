@@ -6,6 +6,7 @@ import useAsync from '../customHook/useAsync';
 import GenreComponent from './genre';
 import { API_URL } from '../config/contansts.js';
 
+
 async function getConcerts(){
     const response = await axios.get(`${API_URL}/genre`);
     return response.data;
@@ -23,10 +24,10 @@ const GenrePage = () => {
             <div id="genre_div">
                 <ul id="genre_ul">
                     <li><Link to='/genre'>전체보기</Link></li>
-                    <li><Link to='/genre/ballad'>발라드</Link></li>
-                    <li><Link to='/genre/trot'>트로트</Link></li>
-                    <li><Link to='/genre/rock'>락/메탈</Link></li>
-                    <li><Link to='/genre/hiphop'>힙합</Link></li>
+                    <li><Link to="/genre/'발라드'">발라드</Link></li>
+                    <li><Link to="/genre/'트로트'">트로트</Link></li>
+                    <li><Link to="/genre/'락메탈'">락/메탈</Link></li>
+                    <li><Link to="/genre/'힙합'">힙합</Link></li>
                 </ul>
             </div>
             <ul className='component'>

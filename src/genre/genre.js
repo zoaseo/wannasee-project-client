@@ -6,8 +6,12 @@ const GenreComponent = ( {concert} ) => {
     return (
             <li id="GenreContent">
                 <span id="span_locaion">{concert.location}</span>
-                <Link to={`/detailview/${concert.id}`}>
+              <Link to={`/detailview/${concert.id}`}>
                 <div><img src={concert.imgsrc} alt="singer_pic" /></div>
+                <div><img src={`/${concert.imgsrc}`} alt="singer_pic" /></div>
+                <span>{concert.title}</span>
+                <div><img src={concert.imgsrc} alt="singer_pic" /></div>
+                <span id="span_title">{concert.title}</span>
                 </Link>
                 <span id="span_title">{concert.title}</span>
             </li>
