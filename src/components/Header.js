@@ -7,7 +7,7 @@ const Header = () => {
         <div id="header">
             <div id="top_header">
                 <div className='inner'>
-                    <div id="ticket_icon"><img src='concert.png' alt="ticket"/></div>
+                    <div id="ticket_icon"><img src='/concert.png' alt="ticket"/></div>
                     <h1><Link to ='/'>WANNASEE?</Link></h1>
                     <ul>
                         <li>login</li>
