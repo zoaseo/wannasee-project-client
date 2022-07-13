@@ -6,7 +6,8 @@ import GenrePage from './genre';
 import RegionPage from './region';
 import PeriodPage from './period';
 import Detailconcert from './components/Detailconcert';
-import Concert_genre from './genre/index_g';
+import ConcertGenre from './genre/index_g';
+import Editconcert from './components/Editconcert';
 
 function App() {
   
@@ -17,10 +18,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage/>}/>
         <Route path="/genre" element={<GenrePage/>}/>
-        <Route path="/genre/:genre" element={<Concert_genre/>}/>
+        <Route path="/genre/:genre" element={<ConcertGenre/>}/>
         <Route path="/region" element={<RegionPage/>}/>
         <Route path="/period" element={<PeriodPage/>}/>
         <Route path="/detailview/:id" element={<Detailconcert/>}/>
+        <Route path="/editConcert/:id" element={<Editconcert/>}/>
       </Routes>
     </div>
   );
