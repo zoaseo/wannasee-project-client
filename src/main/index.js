@@ -35,7 +35,7 @@ const MainPage = () => {
                 <div id='Twiceimg' data-aos="fade-up"><img src='/Twice.jpg' alt="singer_pic" /></div>
             </div>
             <div id="third_content"> 
-                <div><img src='/arrow.png' alt="arrow_pic" /></div>
+               
             </div>
         </div>
    

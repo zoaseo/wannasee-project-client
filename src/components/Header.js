@@ -24,6 +24,7 @@ const Header = () => {
                     <li id="welcome"><Link to ='/'>Welcome</Link></li>
                 </ul> 
             </nav>
+            <div id="Arrimg"><img src='/arrow.png' alt="arrow_pic" /></div>
         </div>
     );
 };

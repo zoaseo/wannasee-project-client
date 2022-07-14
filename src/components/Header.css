@@ -70,3 +70,9 @@ nav #welcome {
     /* background-color: #fe651b; */
     /* background-color: #ff4b01; */
 }
+#Arrimg {
+    width: 50px;
+}
+#Arrimg img {
+    width: 100%;
+}
