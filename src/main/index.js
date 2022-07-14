@@ -1,10 +1,15 @@
-import React from 'react';
+import AOS from 'aos';
+import React, { useEffect } from 'react';
 import './main.css';
+import "./aos.css";
 
 const MainPage = () => {
-    
+    useEffect(() => {
+        AOS.init({
+            duration : 2500
+        });
+    });
     return (
-
         <div id="mainpage" >
             <video loop autoPlay muted>
                 <source src="bts.mp4" type="video/mp4"/>
@@ -25,12 +30,12 @@ const MainPage = () => {
                         <span>creating unforgettable moments, together.</span>
                     </div>            
                 </div>
-                <div id='Cityimg'><img src='/City.png' alt="singer_pic" /></div>
-                <div id='IUimg'><img src='/IU.jpg' alt="singer_pic" /></div>
-                <div id='Twiceimg'><img src='/Twice.jpg' alt="singer_pic" /></div>
+                <div id='Cityimg' ><img src='/branch.png' alt="singer_pic" /></div>
+                <div id='IUimg' data-aos="fade-up"><img src='/IU.jpg' alt="singer_pic" /></div>
+                <div id='Twiceimg' data-aos="fade-up"><img src='/Twice.jpg' alt="singer_pic" /></div>
             </div>
             <div id="third_content"> 
-                
+                <div><img src='/arrow.png' alt="arrow_pic" /></div>
             </div>
         </div>
    

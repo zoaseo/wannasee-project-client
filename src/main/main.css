@@ -22,9 +22,10 @@
 }
 #Cityimg {
     position: absolute;
-    left: 970px;
-    top: 360px;
-    width: 850px;
+    left: 1000px;
+    top: 300px;
+    width: 400px;
+    transform: rotate(-30deg);
 }
 #Cityimg img {
     width: 100%;
@@ -46,4 +47,8 @@
 }
 #Twiceimg img{
     width: 100%;
+}
+#third_content {
+    height: 100vh;
+    background-color: black;
 }
