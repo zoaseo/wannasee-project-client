@@ -7,6 +7,7 @@ import RegionPage from './region';
 import PeriodPage from './period';
 import Detailconcert from './components/Detailconcert';
 import ConcertGenre from './genre/index_g';
+import Editconcert from './components/Editconcert';
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
         <Route path="/region" element={<RegionPage/>}/>
         <Route path="/period" element={<PeriodPage/>}/>
         <Route path="/detailview/:id" element={<Detailconcert/>}/>
+        <Route path="/editConcert/:id" element={<Editconcert/>}/>
       </Routes>
     </div>
   );
