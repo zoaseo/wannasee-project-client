@@ -1,18 +1,11 @@
 import React from 'react';
 import './main.css';
-import {Scrollbar} from 'smooth-scrollbar-react';
 
 const MainPage = () => {
     
     return (
 
         <div id="mainpage" >
-                <Scrollbar
-          plugins={{
-            overscroll: {
-              effect: 'bounce',
-            },
-          }}>
             <video loop autoPlay muted>
                 <source src="bts.mp4" type="video/mp4"/>
             </video>
@@ -39,7 +32,6 @@ const MainPage = () => {
             <div id="third_content"> 
                 
             </div>
-            </Scrollbar>
         </div>
    
     );
