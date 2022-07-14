@@ -1,3 +1,49 @@
+#mainpage {
+    scroll-behavior: smooth; 
+}
 #mainpage video{
+    width: 100%;
+}
+#second_content {
+    background-color: snow;
+    height: 1300px;
+    position: relative;
+}
+#wtw {
+    font-size: 48px;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    padding-top: 160px;
+    margin-left: 280px;
+}
+#paragraph {
+    margin-top: 40px;
+    font-size: 20px; 
+    line-height: 1.5;
+}
+#Cityimg {
+    position: absolute;
+    left: 970px;
+    top: 360px;
+    width: 850px;
+}
+#Cityimg img {
+    width: 100%;
+}
+#IUimg {
+    position: absolute;
+    left: 200px;
+    top: 670px;
+    width: 750px;
+}
+#IUimg img {
+    width: 100%;
+}
+#Twiceimg {
+    position: absolute;
+    right: 210px;
+    top: 210px;
+    width: 500px;
+}
+#Twiceimg img{
     width: 100%;
 }
