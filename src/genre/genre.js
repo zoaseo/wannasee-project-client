@@ -8,7 +8,7 @@ const GenreComponent = ( {concert} ) => {
                 <Link to={`/detailview/${concert.id}`}>
                 <span id="span_locaion">{concert.location}</span>
                 <div><img src={`/${concert.imgsrc}`} alt="singer_pic" /></div>
-                <span>{concert.title}</span>
+                <span id='span_title'>{concert.title}</span>
                 </Link>
             </li>
     );

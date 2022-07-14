@@ -72,7 +72,7 @@ const Editconcert = () => {
     if(error) return <div>페이지를 나타낼 수 없습니다.</div>
     if(!concert) return null;
     return (
-        <div>
+        <div id="detail_concert">
             <h2>고객 정보 수정하기</h2>
             <form onSubmit={onSubmit}> 
                 <input name="c_title" type="text" 

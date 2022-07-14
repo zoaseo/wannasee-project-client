@@ -7,10 +7,11 @@ import RegionPage from './region';
 import PeriodPage from './period';
 import Detailconcert from './components/Detailconcert';
 import ConcertGenre from './genre/index_g';
+import Footer from './components/Footer';
 import Editconcert from './components/Editconcert';
 
 function App() {
-  
+ 
   return (
     <div className="App">
       {/* <div class="cursor"></div> */}
@@ -24,6 +25,7 @@ function App() {
         <Route path="/detailview/:id" element={<Detailconcert/>}/>
         <Route path="/editConcert/:id" element={<Editconcert/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }
