@@ -9,6 +9,7 @@ import Detailconcert from './components/Detailconcert';
 import ConcertGenre from './genre/index_g';
 import Footer from './components/Footer';
 import Editconcert from './components/Editconcert';
+import Createconcert from './components/Createconcert';
 
 function App() {
  
@@ -24,6 +25,7 @@ function App() {
         <Route path="/period" element={<PeriodPage/>}/>
         <Route path="/detailview/:id" element={<Detailconcert/>}/>
         <Route path="/editConcert/:id" element={<Editconcert/>}/>
+        <Route path="/insert" element={<Createconcert/>}/>
       </Routes>
       <Footer/>
     </div>

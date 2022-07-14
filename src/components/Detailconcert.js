@@ -30,6 +30,8 @@ const Detailconcert = () => {
             <div>{concert.genre}</div>
             <div>{concert.price}</div>
             <div>{concert.date}</div>
+            <div>{concert.start_time}</div>
+            <div>{concert.end_time}</div>
             <div>{concert.desc}</div>
             {/* <CounterContainer/> */}
             <button><Link to={`/editConcert/${id}`}>수정</Link></button>

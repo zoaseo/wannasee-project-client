@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
-import useAsync from '../customHook/useAsync';
 
-const Editconcert = () => {
+const Createconcert = () => {
     const navigate = useNavigate(); // 리다이렉션
-    const { id } = useParams();
     const [ formData, setFormData ] = useState({
         // c_imgsrc: "",
         c_title: "",
@@ -19,26 +17,6 @@ const Editconcert = () => {
         c_end_time: "",
         c_desc: "",
     })
-    async function getConcerts(id){
-        const response = await axios.get(`${API_URL}/detailview/${id}`);
-        return response.data;
-    }  
-    const [ state ] = useAsync(()=>getConcerts(id),[id]);
-    const { loading, data:concert, error } = state;
-    useEffect(()=>{
-        setFormData({
-            // c_imgsrc: concert? concert.imgsrc : "",
-            c_title: concert? concert.title : "",
-            c_singer: concert? concert.singer : "",
-            c_genre: concert? concert.genre : "",
-            c_location: concert? concert.location : "",
-            c_price: concert? concert.price : "",
-            c_date: concert? concert.date : "",
-            c_start_time: concert? concert.start_time : "",
-            c_end_time: concert? concert.end_time : "",
-            c_desc: concert? concert.desc : "",
-        })
-    },[concert])
     const onChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -60,16 +38,12 @@ const Editconcert = () => {
         }
         // input에 값이 있는지 체크하고
         // 입력이 다되어있으면 post전송
-        else if(formData.c_title !== "" && formData.c_singer !== "" &&
-        formData.c_genre !== "" && formData.c_location !== "" &&
-        formData.c_price !== "" && formData.c_date !== "" && 
-        formData.c_start_time !== "" && formData.c_end_time !== "" &&
-        formData.c_desc !== ""){
-            updateConcert();
+        else if(formData.c_title !== ""){
+            insertConcert();
         }
     }
-    function updateConcert(){
-        axios.put(`${API_URL}/editConcert/${id}`,formData)
+    function insertConcert(){
+        axios.post(`${API_URL}/addConcert`,formData)
         .then((result)=>{
             console.log(result);
             navigate("/"); // 리다이렉션 추가
@@ -78,9 +52,6 @@ const Editconcert = () => {
             console.log(e);
         })
     }
-    if(loading) return <div>로딩중.....</div>
-    if(error) return <div>페이지를 나타낼 수 없습니다.</div>
-    if(!concert) return null;
     return (
         <div id="detail_concert">
             <h2>고객 정보 수정하기</h2>
@@ -89,11 +60,11 @@ const Editconcert = () => {
                 {/* <input name="c_imgsrc" type="file" 
                 value={formData.c_imgsrc}
                 onChange={onChange}/> */}
-
+        
                 <input name="c_title" type="text" 
                 value={formData.c_title}
                 onChange={onChange}/>
-        
+
                 <input name="c_singer" type="text" 
                 value={formData.c_singer}
                 onChange={onChange}/>
@@ -149,4 +120,4 @@ const Editconcert = () => {
     );
 };
 
-export default Editconcert;
+export default Createconcert;

@@ -10,6 +10,7 @@ const Header = () => {
                     <div id="ticket_icon"><img src='/concert.png' alt="ticket"/></div>
                     <h1><Link to ='/'>WANNASEE?</Link></h1>
                     <ul>
+                        <li><Link to="/insert">insert</Link></li>
                         <li>login</li>
                         <li>join</li>
                         <li>mypage</li>
