@@ -4,13 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
 
 const Createconcert = () => {
-    const [img, setImage] = useState(null);
-
-    const onChangeImg = (e) => { }
-  
-    const onClickImg = () => { }
-
-
     const navigate = useNavigate(); // 리다이렉션
     const [ formData, setFormData ] = useState({
         c_imgsrc: "",

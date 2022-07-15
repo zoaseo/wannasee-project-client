@@ -11,7 +11,7 @@ const ConcertWeekend = () => {
         return response.data;
     }
     const { weekend } = useParams();
-    const [state] = useAsync(()=>getConcerts(weekend), [weekend])
+    const [state] = useAsync(()=>getConcerts(weekend), [weekend]);
     const { loading, data: concerts, error } = state;
     if(loading) 
     return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>

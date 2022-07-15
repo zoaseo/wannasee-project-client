@@ -27,8 +27,8 @@ const PeriodPage = () => {
                         <li id="monthly">
                             <Link to='/period'>월간</Link>
                             <div id="monthdiv">
-                            <div>- 7월</div>
-                            <div>- 8월</div>
+                                <div>- 7월</div>
+                                <div>- 8월</div>
                             </div>
                         </li>
                         <li><Link to='/period/1'>주말</Link></li>
