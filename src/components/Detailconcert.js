@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
 import './Detailconcert.css';
-import { Link } from 'react-router-dom'
 import CounterContainer from './CounterContainer';
 
 
@@ -14,8 +13,26 @@ const Detailconcert = () => {
         return response.data;
     }  
     const { id } = useParams();
+    const navigate = useNavigate();
     const [ state ] = useAsync(()=>getConcerts(id),[id]);
     const { loading, data:concert, error } = state;
+    
+    // 콘서트 삭제
+    const onDelete = () => {
+        if(window.confirm("정말 삭제하시겠습니까?")){
+            axios.delete(`${API_URL}/delConcert/${id}`)
+            .then(result=>{
+                console.log("삭제되었습니다.");
+                navigate("/"); // 리다이렉션 추가
+            })
+            .catch(e=>{
+                console.log(e);
+            })
+        }else{
+            alert("삭제가 취소되었습니다");
+        }
+
+    }
 
     if(loading) return <div>로딩중.....</div>
     if(error) return <div>에러가 발생했습니다.</div>
@@ -32,9 +49,10 @@ const Detailconcert = () => {
             <div>{concert.date}</div>
             <div>{concert.start_time}</div>
             <div>{concert.end_time}</div>
-            <div>{concert.desc}</div>
-            {/* <CounterContainer/> */}
+            <div>{concert.description}</div>
+            <CounterContainer/>
             <button><Link to={`/editConcert/${id}`}>수정</Link></button>
+            <button onClick={onDelete}>삭제</button>
         </div>
     );
 };

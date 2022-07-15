@@ -10,6 +10,7 @@ import ConcertGenre from './genre/index_g';
 import Footer from './components/Footer';
 import Editconcert from './components/Editconcert';
 import Createconcert from './components/Createconcert';
+import ConcertRegion from './region/index_r';
 
 function App() {
  
@@ -22,6 +23,7 @@ function App() {
         <Route path="/genre" element={<GenrePage/>}/>
         <Route path="/genre/:genre" element={<ConcertGenre/>}/>
         <Route path="/region" element={<RegionPage/>}/>
+        <Route path="/region/:rank_location" element={<ConcertRegion/>}/>
         <Route path="/period" element={<PeriodPage/>}/>
         <Route path="/detailview/:id" element={<Detailconcert/>}/>
         <Route path="/editConcert/:id" element={<Editconcert/>}/>

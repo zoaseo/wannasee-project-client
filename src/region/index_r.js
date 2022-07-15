@@ -1,24 +1,25 @@
 import React from 'react';
 import './region.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import RegionComponent from './region';
 import { API_URL } from '../config/contansts.js';
 
-async function getConcerts(){
-    const response = await axios.get(`${API_URL}/region`);
-    return response.data;
-}
-
-const RegionPage = () => {
-    const [state] = useAsync(getConcerts, [])
+const ConcertRegion = () => {
+    async function getConcerts(rank_location){
+        const response = await axios.get(`${API_URL}/region/${rank_location}`);
+        return response.data;
+    }
+    const { rank_location } = useParams();
+    const [state] = useAsync(()=>getConcerts(rank_location), [rank_location])
     const { loading, data: concerts, error } = state;
+    console.log(state);
     if(loading) return <div>로딩중 ...</div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!concerts) return <div>로딩중입니다.</div>
     return (
-        <div className="Regionpage">
+    <div className="Regionpage">
         <h1>지역별</h1>
         <div id="region_div">
             <ul id="region_ul">
@@ -36,10 +37,10 @@ const RegionPage = () => {
         <div>
             {concerts.map(concert=>(
                         <RegionComponent  key={concert.id} concert={concert}/>
-                    ))}
-            </div>
+            ))}
+        </div>
     </div>
     );
 };
 
-export default RegionPage;
+export default ConcertRegion;

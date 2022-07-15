@@ -17,7 +17,7 @@ const Editconcert = () => {
         c_date: "",
         c_start_time: "",
         c_end_time: "",
-        c_desc: "",
+        c_description: "",
     })
     async function getConcerts(id){
         const response = await axios.get(`${API_URL}/detailview/${id}`);
@@ -36,7 +36,7 @@ const Editconcert = () => {
             c_date: concert? concert.date : "",
             c_start_time: concert? concert.start_time : "",
             c_end_time: concert? concert.end_time : "",
-            c_desc: concert? concert.desc : "",
+            c_description: concert? concert.description : "",
         })
     },[concert])
     const onChange = (e) => {
@@ -48,25 +48,33 @@ const Editconcert = () => {
     }
     // 폼 submit 이벤트
     const onSubmit = (e) => {
-        // form에 원래 연결된 이벤트를 제거
-        e.preventDefault();
-        // 가격이 숫자인지 체크
-        if(isNaN(formData.c_price)){
-            alert("가격은 숫자만 입력해주세요");
-            setFormData({
-                ...formData,
-                c_price: "",
-            })
+        if(window.confirm("정말 수정하시겠습니까?")){
+            // form에 원래 연결된 이벤트를 제거
+            e.preventDefault();
+            // 가격이 숫자인지 체크
+            if(isNaN(formData.c_price)){
+                alert("가격은 숫자만 입력해주세요");
+                setFormData({
+                    ...formData,
+                    c_price: "",
+                })
+            }
+            // input에 값이 있는지 체크하고
+            // 입력이 다되어있으면 post전송
+            else if(formData.c_title !== "" && formData.c_singer !== "" &&
+            formData.c_genre !== "" && formData.c_location !== "" &&
+            formData.c_price !== "" && formData.c_date !== "" && 
+            formData.c_start_time !== "" && formData.c_end_time !== "" &&
+            formData.c_description !== ""){
+                updateConcert();
+            }
+            else {
+                alert('모든 기입란에 기입해주세요');
+            }
+        }else{
+            alert("수정이 취소되었습니다");
         }
-        // input에 값이 있는지 체크하고
-        // 입력이 다되어있으면 post전송
-        else if(formData.c_title !== "" && formData.c_singer !== "" &&
-        formData.c_genre !== "" && formData.c_location !== "" &&
-        formData.c_price !== "" && formData.c_date !== "" && 
-        formData.c_start_time !== "" && formData.c_end_time !== "" &&
-        formData.c_desc !== ""){
-            updateConcert();
-        }
+        
     }
     function updateConcert(){
         axios.put(`${API_URL}/editConcert/${id}`,formData)
@@ -138,8 +146,8 @@ const Editconcert = () => {
                 value={formData.c_end_time}
                 onChange={onChange}/>
 
-                <input name="c_desc" type="text" 
-                value={formData.c_desc}
+                <input name="c_description" type="text" 
+                value={formData.c_description}
                 onChange={onChange}/>
             
                 <button type="submit">등록</button>
