@@ -92,6 +92,31 @@ a { text-decoration: none; color: inherit;}
   width: 100%;
 }
 
+#counter {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 110px;
+  height: 90px;
+  border: 2px solid black;
+  justify-content: center;
+}
+#counter button {
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+#decreasebtn {
+  font-size: 18px;
+  margin-top: -1px;
+  margin-right: 10px;
+}
+#increasebtn {
+  font-size: 18px;
+  margin-top: 2px;
+  margin-left: 10px;
+}
 .spinner_bg {
     height: 100vh;
 }
@@ -143,4 +168,22 @@ a { text-decoration: none; color: inherit;}
       transform: rotate(-360deg);
       -webkit-transform: rotate(-360deg);
     }
+  }
+
+  .Allpage .period_ul:hover #monthdiv{
+    height: 80px;
+    opacity: 1;
+  }
+  .period_ul {
+    margin-top: 50px;
+    /* background-color: #ea4949; */
+    height: 180px;
+  }
+  .Allpage #monthdiv {
+    font-size: 20px;
+    padding-left: 20px;
+    height: 0px;
+    width: 120px;
+    opacity: 0;
+    transition: 0.5s;
   }

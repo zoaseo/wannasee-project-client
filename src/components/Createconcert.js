@@ -12,7 +12,7 @@ const Createconcert = () => {
         c_genre: "",
         c_location: "",
         c_price: "",
-        c_date: "",
+        c_concertdate: "",
         c_start_time: "",
         c_end_time: "",
         c_description: "",
@@ -41,7 +41,7 @@ const Createconcert = () => {
             // 입력이 다되어있으면 post전송
             else if(formData.c_title !== "" && formData.c_singer !== "" &&
             formData.c_genre !== "" && formData.c_location !== "" &&
-            formData.c_price !== "" && formData.c_date !== "" && 
+            formData.c_price !== "" && formData.c_concertdate !== "" && 
             formData.c_start_time !== "" && formData.c_end_time !== "" &&
             formData.c_description !== ""){
                 insertConcert();
@@ -108,8 +108,8 @@ const Createconcert = () => {
                 value={formData.c_price}
                 onChange={onChange}/>
 
-                <input name="c_date" type="date" 
-                value={formData.c_date}
+                <input name="c_concertdate" type="date" 
+                value={formData.c_concertdate}
                 onChange={onChange}/>
             
                 <input name="c_start_time" type="text" 
