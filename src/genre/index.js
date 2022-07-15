@@ -21,20 +21,22 @@ const GenrePage = () => {
     return (
         <div className="Genrepage">
             <h1>장르별</h1>
-            <div id="genre_div">
-                <ul id="genre_ul">
-                    <li><Link to='/genre'>전체보기</Link></li>
-                    <li><Link to="/genre/발라드">발라드</Link></li>
-                    <li><Link to="/genre/트로트">트로트</Link></li>
-                    <li><Link to="/genre/락메탈">락/메탈</Link></li>
-                    <li><Link to="/genre/힙합">힙합</Link></li>
+            <div className="pageinner">
+                <div id="genre_div">
+                    <ul id="genre_ul">
+                        <li><Link to='/genre'>전체보기</Link></li>
+                        <li><Link to="/genre/발라드">발라드</Link></li>
+                        <li><Link to="/genre/트로트">트로트</Link></li>
+                        <li><Link to="/genre/락메탈">락/메탈</Link></li>
+                        <li><Link to="/genre/힙합">힙합</Link></li>
+                    </ul>
+                </div>    
+                <ul className='component'>
+                {concerts.map(concert=>(
+                            <GenreComponent key={concert.id} concert={concert}/>
+                        ))}
                 </ul>
             </div>
-            <ul className='component'>
-            {concerts.map(concert=>(
-                        <GenreComponent key={concert.id} concert={concert}/>
-                    ))}
-            </ul>
         </div>
     );
 };
