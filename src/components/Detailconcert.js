@@ -33,26 +33,36 @@ const Detailconcert = () => {
         }
 
     }
-
     if(loading) return <div>로딩중.....</div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!concert) return <div>로딩중입니다.</div>
 
     return (
-        <div id="detail_concert">
-            <span id="span_locaion">{concert.location}</span>
-            <div><img src={`../${concert.imgsrc}`} alt="singer_pic" /></div>
-            <span id="span_title">{concert.title}</span>
-            <div>{concert.singer}</div>
-            <div>{concert.genre}</div>
-            <div>{concert.price}</div>
-            <div>{concert.date}</div>
-            <div>{concert.start_time}</div>
-            <div>{concert.end_time}</div>
-            <div>{concert.description}</div>
-            <CounterContainer/>
-            <button><Link to={`/editConcert/${id}`}>수정</Link></button>
-            <button onClick={onDelete}>삭제</button>
+        <div>
+            <div id="detail_concert">
+                <div id='btns'>
+                    <button><Link to={`/editConcert/${id}`}>수정</Link></button>
+                    <button onClick={onDelete}>삭제</button>
+                </div>
+                <div id="left_detail">
+                    
+                    <div id="detail_img"><img src={`../${concert.imgsrc}`} alt="singer_pic" /></div>
+                </div>
+                <div id="right_detail">
+                    <span id="span_title">{concert.title}</span>
+                    <div id="div_singer">{concert.singer}</div>
+                    <div id="div_genre">{concert.genre}</div>
+                    <span id="span_locaion">{concert.location}</span>
+                    <div>예술의전당</div>
+                    <div id="div_date">{concert.concertdate} / ₩{concert.price}</div>
+                    <div>공연 시간 {concert.start_time}시부터 {concert.end_time}시까지</div>
+                    <div id="gopurchace">
+                        <CounterContainer/>
+                        <div id="outerpur"><button id="purchace">티켓 구매하기</button></div>
+                    </div>
+                </div>
+            </div>
+            <div id="div_description">{concert.description}</div>
         </div>
     );
 };

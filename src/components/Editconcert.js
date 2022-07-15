@@ -14,7 +14,7 @@ const Editconcert = () => {
         c_genre: "",
         c_location: "",
         c_price: "",
-        c_date: "",
+        c_concertdate: "",
         c_start_time: "",
         c_end_time: "",
         c_description: "",
@@ -33,7 +33,7 @@ const Editconcert = () => {
             c_genre: concert? concert.genre : "",
             c_location: concert? concert.location : "",
             c_price: concert? concert.price : "",
-            c_date: concert? concert.date : "",
+            c_concertdate: concert? concert.concertdate : "",
             c_start_time: concert? concert.start_time : "",
             c_end_time: concert? concert.end_time : "",
             c_description: concert? concert.description : "",
@@ -63,7 +63,7 @@ const Editconcert = () => {
             // 입력이 다되어있으면 post전송
             else if(formData.c_title !== "" && formData.c_singer !== "" &&
             formData.c_genre !== "" && formData.c_location !== "" &&
-            formData.c_price !== "" && formData.c_date !== "" && 
+            formData.c_price !== "" && formData.c_concertdate !== "" && 
             formData.c_start_time !== "" && formData.c_end_time !== "" &&
             formData.c_description !== ""){
                 updateConcert();
@@ -134,8 +134,8 @@ const Editconcert = () => {
                 value={formData.c_price}
                 onChange={onChange}/>
 
-                <input name="c_date" type="date" 
-                value={formData.c_date}
+                <input name="c_concertdate" type="date" 
+                value={formData.c_concertdate}
                 onChange={onChange}/>
             
                 <input name="c_start_time" type="text" 
