@@ -1,5 +1,14 @@
 #footer {
+    display: flex;
+    align-items: center;
     height: 40px;
     background-color: black;
     color: white;
+    padding-left: 55%;
+}
+#footer h1 {
+    font-size: 24px;
+}
+#footer div {
+    margin-left: 20px;
 }

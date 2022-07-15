@@ -6,7 +6,7 @@ import "./aos.css";
 const MainPage = () => {
     useEffect(() => {
         AOS.init({
-            duration : 2500
+            duration : 1000
         });
     });
     return (
@@ -34,8 +34,11 @@ const MainPage = () => {
                 <div id='IUimg' data-aos="fade-up"><img src='/IU.jpg' alt="singer_pic" /></div>
                 <div id='Twiceimg' data-aos="fade-up"><img src='/Twice.jpg' alt="singer_pic" /></div>
             </div>
-            <div id="third_content"> 
-               
+            <div id="third_content">
+                <div id="third_slogan">Let's enjoy the concert</div>
+                <div id="third_slogan2">WANNASEE와 콘서트를 즐길 준비 되셨나요?</div>
+                <div id="circle_slogan"><img src='/circle.png' alt="singer_pic" /></div>
+                <div id="WNNC"data-aos="fade-up"><img src='/WNNC.png' alt="singer_pic" /></div>
             </div>
         </div>
    

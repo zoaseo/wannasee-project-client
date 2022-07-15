@@ -1,5 +1,5 @@
 #mainpage {
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 }
 #mainpage video{
     width: 100%;
@@ -17,7 +17,7 @@
 }
 #paragraph {
     margin-top: 40px;
-    font-size: 20px; 
+    font-size: 20px;
     line-height: 1.5;
 }
 #Cityimg {
@@ -51,4 +51,49 @@
 #third_content {
     height: 100vh;
     background-color: black;
+}
+#third_content {
+    position: relative;
+    color: white;
+}
+#third_content #third_slogan {
+    position: absolute;
+    top: 25%;
+    left: 18%;
+    font-size: 52px;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 3px;
+}
+#third_content #third_slogan2 {
+    position: absolute;
+    top: 32%;
+    left: 18%;
+    font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 2px;
+}
+#WNNC {
+    position: absolute;
+    bottom: 0px;
+    left: -100px;
+    width: 1200px;
+    /* z-index: 5; */
+}
+#WNNC img {
+    width: 100%;
+}
+#circle_slogan {
+    position: absolute;
+    width: 400px;
+    top: 15%;
+    right: 15%;
+    animation: rotate_image 10s linear infinite;transform-origin: 50% 50%;
+}
+#circle_slogan img {
+    width: 100%;
+}
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
 }
