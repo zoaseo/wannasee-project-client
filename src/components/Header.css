@@ -73,8 +73,8 @@ nav #welcome {
 #Arrimg {
     position: fixed;
     width: 50px;
-    bottom: 20px;
-    right: 40px;
+    bottom: 40px;
+    right: 20px;
     animation: upup 1.5s infinite;
     z-index: 1;
     cursor: pointer;

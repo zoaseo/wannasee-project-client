@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
 import './Detailconcert.css';
 import { Link } from 'react-router-dom'
-import CounterContainer from './CounterContainer';
 
 
 const Detailconcert = () => {
@@ -31,7 +30,6 @@ const Detailconcert = () => {
             <div>{concert.price}</div>
             <div>{concert.date}</div>
             <div>{concert.desc}</div>
-            {/* <CounterContainer/> */}
             <button><Link to={`/editConcert/${id}`}>수정</Link></button>
         </div>
     );

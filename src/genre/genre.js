@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import './genre.css'
 import "../aos.css";
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ const GenreComponent = ( {concert} ) => {
         });
     });
     return (
-            <li id="GenreContent"data-aos="fade-up" >
+            <li className="AllContent" data-aos="fade-up" >
                 <Link to={`/detailview/${concert.id}`}>
                     <span id="span_locaion">{concert.location}</span>
                     <div ><img src={`/${concert.imgsrc}`} alt="singer_pic" /></div>

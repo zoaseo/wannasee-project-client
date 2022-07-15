@@ -7,7 +7,7 @@ import "../aos.css";
 const MainPage = () => {
     useEffect(() => {
         AOS.init({
-            duration : 1000
+            duration : 1500
         });
     });
     return (
