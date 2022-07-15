@@ -5,6 +5,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
 import './Detailconcert.css';
 import CounterContainer from './CounterContainer';
+import moment from 'moment';
 
 
 const Detailconcert = () => {
@@ -46,7 +47,7 @@ const Detailconcert = () => {
             <div>{concert.singer}</div>
             <div>{concert.genre}</div>
             <div>{concert.price}</div>
-            <div>{concert.date}</div>
+            <div>{concert.concertdate}</div>
             <div>{concert.start_time}</div>
             <div>{concert.end_time}</div>
             <div>{concert.description}</div>

@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import PeriodComponent from './period';
 import { API_URL } from '../config/contansts.js';
 
-async function getConcerts(){
-    const response = await axios.get(`${API_URL}/period`);
-    return response.data;
-}
-
-const PeriodPage = () => {
-    const [state] = useAsync(getConcerts, [])
+const ConcertWeekend = () => {
+    async function getConcerts(){
+        const response = await axios.get(`${API_URL}/period/${weekend}`);
+        return response.data;
+    }
+    const { weekend } = useParams();
+    const [state] = useAsync(()=>getConcerts(weekend), [weekend])
     const { loading, data: concerts, error } = state;
     if(loading) 
     return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
@@ -27,8 +27,8 @@ const PeriodPage = () => {
                         <li id="monthly">
                             <Link to='/period'>월간</Link>
                             <div id="monthdiv">
-                            <div>- 7월</div>
-                            <div>- 8월</div>
+                            <div><Link to="/">- 7월</Link></div>
+                            <div><Link to="/">- 8월</Link></div>
                             </div>
                         </li>
                         <li><Link to='/period/1'>주말</Link></li>
@@ -44,4 +44,4 @@ const PeriodPage = () => {
     );
 };
 
-export default PeriodPage;
+export default ConcertWeekend;

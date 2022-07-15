@@ -144,3 +144,20 @@ a { text-decoration: none; color: inherit;}
       -webkit-transform: rotate(-360deg);
     }
   }
+
+  .Allpage .period_ul:hover #monthdiv {
+    height: 80px;
+    opacity: 1;
+  }
+  .period_ul {
+    margin-top: 50px;
+    height: 180px;
+  }
+  .Allpage #monthdiv {
+    font-size: 20px;
+    padding-left: 20px;
+    height: 0px;
+    width: 120px;
+    opacity: 0;
+    transition: 0.5s;
+  }
