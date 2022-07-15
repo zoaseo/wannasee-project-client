@@ -6,7 +6,7 @@ import { API_URL } from '../config/contansts';
 const Createconcert = () => {
     const navigate = useNavigate(); // 리다이렉션
     const [ formData, setFormData ] = useState({
-        // c_imgsrc: "",
+        c_imgsrc: "",
         c_title: "",
         c_singer: "",
         c_genre: "",
@@ -68,9 +68,9 @@ const Createconcert = () => {
             <h2>고객 정보 수정하기</h2>
             <form onSubmit={onSubmit}> 
 
-                {/* <input name="c_imgsrc" type="file" 
+                <input name="c_imgsrc" type="file" 
                 value={formData.c_imgsrc}
-                onChange={onChange}/> */}
+                onChange={onChange}/>
         
                 <input name="c_title" type="text" 
                 value={formData.c_title}
