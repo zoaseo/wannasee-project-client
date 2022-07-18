@@ -18,6 +18,23 @@ const Createconcert = () => {
         c_description: "",
         c_concert_place: "",
     })
+    const onChangeImage = (info) => {
+        // 파일이 업로드 중일 때
+        console.log(info.file)
+        if(info.file.status === "uploading"){
+            return;
+        }
+        // 파일이 업로드 완료되었을 때
+        if(info.file.status === "done"){
+            const response = info.file.response;
+            const imageUrl = response.imageUrl;
+            // 받은 이미지 경로를 imageUrl에 넣어줌
+            setFormData({
+                ...formData,
+                c_imgsrc: imageUrl,
+            })
+        }
+    }
     const onChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -45,6 +62,7 @@ const Createconcert = () => {
             formData.c_price !== "" && formData.c_concertdate !== "" && 
             formData.c_start_time !== "" && formData.c_end_time !== "" &&
             formData.c_description !== "" && formData.c_concert_place !== ""){
+                onChangeImage();
                 insertConcert();
             }
             else {
