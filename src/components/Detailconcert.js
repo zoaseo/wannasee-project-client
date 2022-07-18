@@ -53,7 +53,7 @@ const Detailconcert = () => {
                     <div id="div_singer">{concert.singer}</div>
                     <div id="div_genre">{concert.genre}</div>
                     <span id="span_locaion">{concert.location}</span>
-                    <div>예술의전당</div>
+                    <div>{concert.concert_place}</div>
                     <div id="div_date">{concert.concertdate} / ₩{concert.price}</div>
                     <div>🕒 공연 시간 {concert.start_time}시부터 {concert.end_time}시까지</div>
                     <div id="gopurchace">
