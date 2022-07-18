@@ -33,7 +33,7 @@ const Detailconcert = () => {
         }
 
     }
-    if(loading) return <div>로딩중.....</div>
+    if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!concert) return <div>로딩중입니다.</div>
 
@@ -53,9 +53,9 @@ const Detailconcert = () => {
                     <div id="div_singer">{concert.singer}</div>
                     <div id="div_genre">{concert.genre}</div>
                     <span id="span_locaion">{concert.location}</span>
-                    <div>예술의전당</div>
+                    <div>{concert.concert_place}</div>
                     <div id="div_date">{concert.concertdate} / ₩{concert.price}</div>
-                    <div>공연 시간 {concert.start_time}시부터 {concert.end_time}시까지</div>
+                    <div>🕒 공연 시간 {concert.start_time}시부터 {concert.end_time}시까지</div>
                     <div id="gopurchace">
                         <CounterContainer/>
                         <div id="outerpur"><button id="purchace">티켓 구매하기</button></div>

@@ -14,7 +14,7 @@ const ConcertRegion = () => {
     const [state] = useAsync(()=>getConcerts(rank_location), [rank_location])
     const { loading, data: concerts, error } = state;
     console.log(state);
-    if(loading) return <div>로딩중 ...</div>
+    if(loading) return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!concerts) return <div>로딩중입니다.</div>
     return (

@@ -16,6 +16,7 @@ const Createconcert = () => {
         c_start_time: "",
         c_end_time: "",
         c_description: "",
+        c_concert_place: "",
     })
     const onChange = (e) => {
         const { name, value } = e.target;
@@ -43,7 +44,7 @@ const Createconcert = () => {
             formData.c_genre !== "" && formData.c_location !== "" &&
             formData.c_price !== "" && formData.c_concertdate !== "" && 
             formData.c_start_time !== "" && formData.c_end_time !== "" &&
-            formData.c_description !== ""){
+            formData.c_description !== "" && formData.c_concert_place !== ""){
                 insertConcert();
             }
             else {
@@ -102,6 +103,10 @@ const Createconcert = () => {
             
                 <input name="c_location" type="text" 
                 value={formData.c_location}
+                onChange={onChange}/>
+
+                <input name="c_concert_place" type="text" 
+                value={formData.c_concert_place}
                 onChange={onChange}/>
 
                 <input name="c_price" type="text" 

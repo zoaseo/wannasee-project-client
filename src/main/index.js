@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './main.css';
 import "../aos.css";
 
+
 const MainPage = () => {
     useEffect(() => {
         AOS.init({

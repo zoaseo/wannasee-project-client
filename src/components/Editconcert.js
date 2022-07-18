@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
 import useAsync from '../customHook/useAsync';
+import './Editconcert.css';
 
 const Editconcert = () => {
     const navigate = useNavigate(); // 리다이렉션
@@ -18,6 +19,7 @@ const Editconcert = () => {
         c_start_time: "",
         c_end_time: "",
         c_description: "",
+        c_concert_place: "",
     })
     async function getConcerts(id){
         const response = await axios.get(`${API_URL}/detailview/${id}`);
@@ -32,6 +34,7 @@ const Editconcert = () => {
             c_singer: concert? concert.singer : "",
             c_genre: concert? concert.genre : "",
             c_location: concert? concert.location : "",
+            c_concert_place: concert? concert.concert_place : "",
             c_price: concert? concert.price : "",
             c_concertdate: concert? concert.concertdate : "",
             c_start_time: concert? concert.start_time : "",
@@ -65,7 +68,7 @@ const Editconcert = () => {
             formData.c_genre !== "" && formData.c_location !== "" &&
             formData.c_price !== "" && formData.c_concertdate !== "" && 
             formData.c_start_time !== "" && formData.c_end_time !== "" &&
-            formData.c_description !== ""){
+            formData.c_description !== "" && formData.c_concert_place!== ""){
                 updateConcert();
             }
             else {
@@ -86,70 +89,87 @@ const Editconcert = () => {
             console.log(e);
         })
     }
-    if(loading) return <div>로딩중.....</div>
+    if(loading) return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>페이지를 나타낼 수 없습니다.</div>
     if(!concert) return null;
     return (
-        <div id="detail_concert">
-            <h2>고객 정보 수정하기</h2>
+        <div id="edit_concert">
+            <h2>공연 정보 수정하기</h2>
             <form onSubmit={onSubmit}> 
-
                 {/* <input name="c_imgsrc" type="file" 
                 value={formData.c_imgsrc}
                 onChange={onChange}/> */}
+                <div>
+                    타이틀 <input name="c_title" type="text" 
+                    value={formData.c_title}
+                    onChange={onChange}/>
+                </div>
+                <div>
+                    가수<input name="c_singer" type="text" 
+                    value={formData.c_singer}
+                    onChange={onChange}/>
+                </div>
+                <div>
+                    장르
+                    발라드<input name="c_genre" type="radio" 
+                    value="발라드"
+                    onChange={onChange}
+                    checked={formData.c_genre === "발라드" ? true : false}/>
 
-                <input name="c_title" type="text" 
-                value={formData.c_title}
-                onChange={onChange}/>
-        
-                <input name="c_singer" type="text" 
-                value={formData.c_singer}
-                onChange={onChange}/>
-            
-                발라드<input name="c_genre" type="radio" 
-                value="발라드"
-                onChange={onChange}
-                checked={formData.c_genre === "발라드" ? true : false}/>
+                    트로트<input name="c_genre" type="radio" 
+                    value="트로트"
+                    onChange={onChange}
+                    checked={formData.c_genre === "트로트" ? true : false}/>
+                
+                    락/메탈<input name="c_genre" type="radio" 
+                    value="락/메탈"
+                    onChange={onChange}
+                    checked={formData.c_genre === "락/메탈" ? true : false}/>
 
-                트로트<input name="c_genre" type="radio" 
-                value="트로트"
-                onChange={onChange}
-                checked={formData.c_genre === "트로트" ? true : false}/>
-            
-                락/메탈<input name="c_genre" type="radio" 
-                value="락/메탈"
-                onChange={onChange}
-                checked={formData.c_genre === "락/메탈" ? true : false}/>
-
-                힙합<input name="c_genre" type="radio" 
-                value="힙합"
-                onChange={onChange}
-                checked={formData.c_genre === "힙합" ? true : false}/>
-            
-                <input name="c_location" type="text" 
+                    힙합<input name="c_genre" type="radio" 
+                    value="힙합"
+                    onChange={onChange}
+                    checked={formData.c_genre === "힙합" ? true : false}/>
+                </div>
+                <div>
+                지역 <input name="c_location" type="text" 
                 value={formData.c_location}
                 onChange={onChange}/>
-
-                <input name="c_price" type="text" 
+                </div>
+                <div>
+                장소 <input name="c_concert_place" type="text" 
+                value={formData.c_concert_place}
+                onChange={onChange}/>
+                </div>
+                <div>
+                가격 <input name="c_price" type="text" 
                 value={formData.c_price}
                 onChange={onChange}/>
-
+                </div>
+                <div>
+                날짜
                 <input name="c_concertdate" type="date" 
                 value={formData.c_concertdate}
                 onChange={onChange}/>
-            
+                </div>
+                <div>
+                시작시간
                 <input name="c_start_time" type="text" 
                 value={formData.c_start_time}
                 onChange={onChange}/>
-                
+                </div>
+                <div>
+                종료시간
                 <input name="c_end_time" type="text" 
                 value={formData.c_end_time}
                 onChange={onChange}/>
-
+                </div>
+                <div>
+                공연내용
                 <input name="c_description" type="text" 
                 value={formData.c_description}
                 onChange={onChange}/>
-            
+                </div>
                 <button type="submit">등록</button>
                 <button type="reset">취소</button>            
             </form>
