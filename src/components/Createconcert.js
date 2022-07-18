@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
+import './Editconcert.css'
 
 const Createconcert = () => {
     const navigate = useNavigate(); // 리다이렉션
@@ -83,14 +84,96 @@ const Createconcert = () => {
         })
     }
     return (
-        <div id="detail_concert">
-            <h2>고객 정보 수정하기</h2>
+        <div id="edit_concert">
+            <h2>공연 정보 등록하기</h2>
             <form onSubmit={onSubmit}> 
-
+            <div id="edit_genre">
+                    <span className='radios'>
+                    발라드<input name="c_genre" type="radio" 
+                    value="발라드"
+                    onChange={onChange}
+                    checked={formData.c_genre === "발라드" ? true : false}/>
+                    </span>
+                    <span className='radios'>
+                    트로트<input name="c_genre" type="radio" 
+                    value="트로트"
+                    onChange={onChange}
+                    checked={formData.c_genre === "트로트" ? true : false}/>
+                    </span>
+                    <span className='radios'>
+                    락/메탈<input name="c_genre" type="radio" 
+                    value="락/메탈"
+                    onChange={onChange}
+                    checked={formData.c_genre === "락/메탈" ? true : false}/>
+                    </span>
+                    <span className='radios'>
+                    힙합<input name="c_genre" type="radio" 
+                    value="힙합"
+                    onChange={onChange}
+                    checked={formData.c_genre === "힙합" ? true : false}/>
+                    </span>
+                </div>
+                <div>
+                    <span className="title left_move2">타이틀</span> 
+                    <input name="c_title" type="text" 
+                    value={formData.c_title}
+                    onChange={onChange}/>
+                </div>
+                <div>
+                    <span className="title">가수</span>
+                    <input name="c_singer" type="text" 
+                    value={formData.c_singer}
+                    onChange={onChange}/>
+                </div>
+                <div>
+                <span className='title'>지역</span> 
+                <input name="c_location" type="text" 
+                value={formData.c_location}
+                onChange={onChange}/>
+                </div>
+                <div>
+                <span className='title'>장소</span> 
+                <input name="c_concert_place" type="text" 
+                value={formData.c_concert_place}
+                onChange={onChange}/>
+                </div>
+                <div>
+                <span className='title'>가격</span> 
+                <input name="c_price" type="text" 
+                value={formData.c_price}
+                onChange={onChange}/>
+                </div>
+                <div>
+                <span className='title'>날짜</span>
+                <input name="c_concertdate" type="date" 
+                value={formData.c_concertdate}
+                onChange={onChange}/>
+                </div>
+                <div>
+                <span className='title left_move'>시작시간</span>
+                <input name="c_start_time" type="text" 
+                value={formData.c_start_time}
+                onChange={onChange}/>
+                </div>
+                <div>
+                <span className='title left_move'>종료시간</span>
+                <input name="c_end_time" type="text" 
+                value={formData.c_end_time}
+                onChange={onChange}/>
+                </div>
+                <div id="concert_desc">
+                <span className='title left_move upspan'>공연내용</span>
+                <textarea name="c_description" type="text" onChange={onChange} value={formData.c_description}></textarea>
+                </div>
+                <div id="btns">
+                <button type="submit">등록</button>
+                <button type="reset">취소</button>    
+                </div>        
+                {/* <div>
                 <input name="c_imgsrc" type="file" 
                 value={formData.c_imgsrc}
                 onChange={onChange}/>
-        
+                </div>
                 <input name="c_title" type="text" 
                 value={formData.c_title}
                 onChange={onChange}/>
@@ -98,8 +181,8 @@ const Createconcert = () => {
                 <input name="c_singer" type="text" 
                 value={formData.c_singer}
                 onChange={onChange}/>
-            
-                발라드<input name="c_genre" type="radio" 
+             */}
+                {/* 발라드<input name="c_genre" type="radio" 
                 value="발라드"
                 onChange={onChange}
                 checked={formData.c_genre === "발라드" ? true : false}/>
@@ -118,8 +201,8 @@ const Createconcert = () => {
                 value="힙합"
                 onChange={onChange}
                 checked={formData.c_genre === "힙합" ? true : false}/>
-            
-                <input name="c_location" type="text" 
+             */}
+                {/* <input name="c_location" type="text" 
                 value={formData.c_location}
                 onChange={onChange}/>
 
@@ -148,7 +231,7 @@ const Createconcert = () => {
                 onChange={onChange}/>
             
                 <button type="submit">등록</button>
-                <button type="reset">취소</button>            
+                <button type="reset">취소</button>             */}
             </form>
         </div>
     );
