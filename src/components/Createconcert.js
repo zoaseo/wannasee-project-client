@@ -19,11 +19,19 @@ const Createconcert = () => {
         c_description: "",
         c_concert_place: "",
     })
+    const onChangeImg = (e) => {
+        const file = e.target.files[0];
+        const imgsrc = "image/"+file.name;
+        setFormData({
+            ...formData,
+            c_imgsrc: imgsrc
+        })
+    }
     const onChange = (e) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]: value
+            [name]: value,
         })
     }
     // 폼 submit 이벤트
@@ -70,6 +78,10 @@ const Createconcert = () => {
             <h2>공연 정보 등록하기</h2>
             <form onSubmit={onSubmit}> 
             <div id="edit_genre">
+                        <div id='imgimgimg'>
+                            <input name="c_imgsrc" type="file" 
+                            onChange={onChangeImg}/>
+                        </div>
                     <span className='radios'>
                     발라드<input name="c_genre" type="radio" 
                     value="발라드"
