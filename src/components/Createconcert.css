@@ -1,10 +1,10 @@
-#edit_concert {
-    height: 750px;
+#create_concert {
+    height: 1000px;
 }
-#edit_concert h2 {
+#create_concert h2 {
     padding: 50px 400px;
 }
-#edit_concert form{
+#create_concert form{
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -13,18 +13,18 @@
     align-items: center;
     justify-content: center;
 }
-#edit_concert form div {
+#create_concert form div {
     margin: 5px 0;
 }
-#edit_concert form .title {
+#create_concert form .title {
     margin-right: 80px;
     font-weight: bold;
     font-size: 18px;
 }
-#edit_concert form .left_move {
+#create_concert form .left_move {
     margin-right: 45px;
 }
-#edit_concert form .left_move2 {
+#create_concert form .left_move2 {
     margin-right: 62px;
 }
 .radios {
@@ -36,18 +36,18 @@ textarea {
     padding: 3px;
     resize: none;
 }
-#edit_concert input {
+#create_concert input {
     width: 500px;
     height: 30px;
 }
-#edit_genre {
+#create_genre {
     padding-left: 80px;
 }
-#edit_genre:not(:nth-child(2)) input {
+#create_genre:not(:nth-child(2)) input {
     width: 15px;
     height: 12px;
 }
-#edit_genre:not(:nth-child(2)) .title {
+#create_genre:not(:nth-child(2)) .title {
     margin-right: 120px;
 }
 .upspan {
@@ -57,12 +57,36 @@ textarea {
 #concert_desc {
     display: flex;
 }
-#edit_concert #btns {
+#create_concert #btns {
     margin-left: 550px;
 }
-#edit_concert #btns button {
+#create_concert #btns button {
     outline: none;
     border: none;
     background-color: #fff;
     margin: 0 5px;
+}
+#upload-img-placeholder {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(230, 230, 230);
+    background: rgb(250, 250, 253);
+    margin-left: 16px;
+}
+#upload-img-placeholder > img {
+    width: 50px;
+    height: 50px;
+}
+#upload-img-placeholder > span {
+    font-size: 14px;
+    color: rgb(195, 194, 204);
+}
+.upload-label {
+    width: 100px;
+    font-size: 18px;
+    text-align: left;
 }

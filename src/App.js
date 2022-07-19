@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import MemberLogin from './components/MemberLogin';
 import MainPage from './main/index';
 import { Route, Routes } from 'react-router-dom'
 import GenrePage from './genre';
@@ -12,6 +13,7 @@ import Editconcert from './components/Editconcert';
 import Createconcert from './components/Createconcert';
 import ConcertRegion from './region/index_r';
 import ConcertWeekend from './period/index_w';
+import MemberJoin from './components/MemberJoin';
 
 function App() {
  
@@ -21,6 +23,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
+        <Route path="/login" element={<MemberLogin/>}/>
+        <Route path="/join" element={<MemberJoin/>}/>
         <Route path="/genre" element={<GenrePage/>}/>
         <Route path="/genre/:genre" element={<ConcertGenre/>}/>
         <Route path="/region" element={<RegionPage/>}/>

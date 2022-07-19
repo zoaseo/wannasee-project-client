@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
-import './Editconcert.css'
+// import 'antd/dist/antd.css';
+import { Upload } from 'antd';
+import './Createconcert.css'
 
 const Createconcert = () => {
     const navigate = useNavigate(); // 리다이렉션
@@ -73,8 +75,9 @@ const Createconcert = () => {
             console.log(e);
         })
     }
+
     return (
-        <div id="edit_concert">
+        <div id="create_concert">
             <h2>공연 정보 등록하기</h2>
             <form onSubmit={onSubmit}> 
             <div id="edit_genre">
