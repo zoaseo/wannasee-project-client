@@ -13,10 +13,10 @@ const Header = () => {
                     <div id="ticket_icon"><img src='/concert.png' alt="ticket"/></div>
                     <h1><Link to ='/'>WANNASEE?</Link></h1>
                     <ul>
-                        <li>login</li>
-                        <li>join</li>
-                        <li>mypage</li>
                         <li><Link to="/insert">insert</Link></li>
+                        <li><Link to="/login">login</Link></li>
+                        <li><Link to="/join">join</Link></li>
+                        <li>mypage</li>
                     </ul>
                 </div>
             </div>
