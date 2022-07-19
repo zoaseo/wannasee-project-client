@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
-// import 'antd/dist/antd.css';
-import { Upload } from 'antd';
 import './Createconcert.css'
 
 const Createconcert = () => {
