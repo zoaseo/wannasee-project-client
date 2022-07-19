@@ -19,28 +19,19 @@ const Createconcert = () => {
         c_description: "",
         c_concert_place: "",
     })
-    const onChangeImage = (info) => {
-        // 파일이 업로드 중일 때
-        console.log(info.file)
-        if(info.file.status === "uploading"){
-            return;
-        }
-        // 파일이 업로드 완료되었을 때
-        if(info.file.status === "done"){
-            const response = info.file.response;
-            const imageUrl = response.imageUrl;
-            // 받은 이미지 경로를 imageUrl에 넣어줌
-            setFormData({
-                ...formData,
-                c_imgsrc: imageUrl,
-            })
-        }
+    const onChangeImg = (e) => {
+        const file = e.target.files[0];
+        const imgsrc = "image/"+file.name;
+        setFormData({
+            ...formData,
+            c_imgsrc: imgsrc
+        })
     }
     const onChange = (e) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]: value
+            [name]: value,
         })
     }
     // 폼 submit 이벤트
@@ -63,7 +54,6 @@ const Createconcert = () => {
             formData.c_price !== "" && formData.c_concertdate !== "" && 
             formData.c_start_time !== "" && formData.c_end_time !== "" &&
             formData.c_description !== "" && formData.c_concert_place !== ""){
-                onChangeImage();
                 insertConcert();
             }
             else {
@@ -88,6 +78,10 @@ const Createconcert = () => {
             <h2>공연 정보 등록하기</h2>
             <form onSubmit={onSubmit}> 
             <div id="edit_genre">
+                        <div id='imgimgimg'>
+                            <input name="c_imgsrc" type="file" 
+                            onChange={onChangeImg}/>
+                        </div>
                     <span className='radios'>
                     발라드<input name="c_genre" type="radio" 
                     value="발라드"
