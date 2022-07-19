@@ -1,0 +1,27 @@
+#Mypage {
+    height: 700px;
+    background-color:#FEBF63;
+    padding-top: 60px;
+}
+#Mypage form{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#Mypage form table{
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 25px;
+    height: 600px;
+    font-size: 16px;
+    
+    text-align: center;
+}
+#Mypage form table th{
+    padding: 10px 0;
+    font-size: 24px;
+}
+#Mypage form table tr {
+    height: 20px;
+}

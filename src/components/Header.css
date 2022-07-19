@@ -24,7 +24,7 @@
 }
 #top_header h1 {
     margin-top: -3px;
-    margin-left: 136px;
+    margin-left: 178px;
     font-size: 26px;
 }
 #top_header .inner ul {
@@ -45,7 +45,7 @@ nav {
 nav li{
     padding-left: 110px;
     height: 50px;
-    line-height: 75px;
+    line-height: 76px;
     transition: 0.3s;
     /* cursor: pointer; */
     font-family: 'Black Han Sans', sans-serif;
@@ -57,21 +57,20 @@ nav li:hover {
     color: black
 }
 nav #genre {
-    background-color: #377D71;
+    /* background-color: #377D71; */
     background-color: #7FDBDA;
 }
 nav #region {
-    background-color: #FBC5C5;
+    /* background-color: #FBC5C5; */
     background-color: #ADE498;
 }
 nav #period {
-    background-color: #FBA1A1;
+    /* background-color: #FBA1A1; */
     background-color: #EDE682;
 }
 nav #welcome {
     /* background-color: #8879B0; */
     /* background-color: #FF5E78; */
-    background-color: #FEBF63;
     /* background-color: #fe651b; */
     /* background-color: #ff4b01; */
     background-color: #FEBF63;

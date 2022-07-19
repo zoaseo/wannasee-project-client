@@ -121,12 +121,11 @@ const MemberJoin = () => {
     }
     return (
         <div id="memberJoin">
-            <h1>회원가입</h1>
             <form onSubmit={onSubmit}>
-                <div className='formItem'>
+                {/* <div className='formItem'>
                     <span>아이디</span>	
                     <input required type="text" id="id" name="id" value={formData.id} onChange={onChange}/>
-                    {/* <input required id="chchch" type="text" value="" onClick={(e)=>{OnIdCh(e);}} /> */}
+                    <input required id="chchch" type="text" value="" onClick={(e)=>{OnIdCh(e);}} />
                     <span onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
                 </div>     
                 <div className='formItem'>
@@ -171,8 +170,77 @@ const MemberJoin = () => {
                 <div>
                     <button type="submit">등록</button>
                     <button type="reset">취소</button>
-                </div>
+                </div> */}
+                <table>
+                    <tbody>
+                        <tr>
+                            <th colSpan={2}>
+                                회원가입
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>아이디</td>
+                            <td>
+                                <input type="text" name="id" value={formData.id} onChange={onChange}/>
+                                <span onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호</td>
+                            <td>
+                            <input type="password" name="password" value={formData.password} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호 확인</td>
+                            <td>
+                            <input type="password" name="passwordCk" value={formData.passwordCk} onChange={(e)=>{onChange(e); OnPwCh(e);}}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>이름</td>
+                            <td>
+                            <input type="text" name="name" value={formData.name} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>전화번호</td>
+                            <td>
+                            <input type="text" name="phone" value={formData.phone} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td>
+                            <input type="text" name="email" value={formData.email} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>주소</td>
+                            <td>
+                                <input name="add" type="text" value={formData.add} onChange={onChange}/>
+                                <input name="adddetail" type="text" value={formData.adddetail} onChange={onChange}/>
+                                <button type="button" onClick={openPostCode}>우편번호 검색</button>
+                                <div id="popupDom">
+                                {isPopupOpen && (
+                                    <PopupDom>
+                                        <PopupPostCode onClose={closePostCode}
+                                        onAddData={onAddData}
+                                        />
+                                    </PopupDom>
+                                )}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan={2} id="btns">
+                               <button type="submit">등록</button>
+                               <button type="reset">취소</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </form>
+
         </div>
     );
 };
