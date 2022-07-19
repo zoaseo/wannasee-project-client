@@ -1,4 +1,54 @@
 #memberJoin {
-    height: 800px;
+    height: 700px;
+    background-color:#FEBF63;
+    padding-top: 60px;
+}
+#memberJoin form{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#memberJoin form table{
     background-color: white;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 600px;
+    font-size: 16px;
+}
+#memberJoin form table th{
+    padding: 10px 0;
+    font-size: 24px;
+}
+#memberJoin form table td{
+    padding-left: 40px;
+}
+#btns {
+    text-align: center;
+    padding-right: 40px;
+}
+button {
+    outline: none;
+    border: none;
+    background-color: #FEBF63;
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 2px 8px;
+    color: white;
+}
+#memberJoin input {
+    width: 180px;
+    height: 25px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    padding: 3px;
+    border-bottom: 5px solid #FEBF63;
+}
+#btns button {
+    color: #FEBF63;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 16px;
 }
