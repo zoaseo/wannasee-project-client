@@ -14,6 +14,7 @@ import Createconcert from './components/Createconcert';
 import ConcertRegion from './region/index_r';
 import ConcertWeekend from './period/index_w';
 import MemberJoin from './components/MemberJoin';
+import MyPage from './components/MyPage';
 
 function App() {
  
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<MainPage/>}/>
         <Route path="/login" element={<MemberLogin/>}/>
         <Route path="/join" element={<MemberJoin/>}/>
+        <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/genre" element={<GenrePage/>}/>
         <Route path="/genre/:genre" element={<ConcertGenre/>}/>
         <Route path="/region" element={<RegionPage/>}/>

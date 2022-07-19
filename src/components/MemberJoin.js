@@ -78,58 +78,80 @@ const MemberJoin = () => {
             console.log(e);
         })
     }
+
     return (
         <div id="memberJoin">
-            <h1>회원가입</h1>
             <form onSubmit={onSubmit}>
-                <div className='formItem'>
-                    <span>아이디</span>	
-                    <input type="text" name="id" value={formData.id} onChange={onChange}/>
-                    <button>중복확인</button>
-                </div>     
-                <div className='formItem'>
-                    <span>비밀번호</span>	
-                    <input type="password" name="password" value={formData.password} onChange={onChange}/>
-                </div>    
-                <div className='formItem'>
-                    <span>비밀번호 확인</span>	
-                    <input type="password" name="passwordCk" value={formData.passwordCk} onChange={onChange}/>
-                </div>     
-                <div className='formItem'>
-                    <span>이름</span>	
-                    <input type="text" name="name" value={formData.name} onChange={onChange}/>
-                </div>     
-                <div className='formItem'>
-                    <span>전화번호</span>	
-                    <input type="text" name="phone" value={formData.phone} onChange={onChange}/>
-                </div>
-                <div className='formItem'>
-                    <span>이메일</span>	
-                    <input type="text" name="email" value={formData.email} onChange={onChange}/>
-                </div>
-                <div className='formItem'>  
-                <input name="add" type="text"
-                        value={formData.add}
-                        onChange={onChange}/>
-                        <input name="adddetail" type="text"
-                        value={formData.adddetail}
-                        onChange={onChange}/>
-                        <button type="button" onClick={openPostCode}>우편번호 검색</button>
-                        <div id="popupDom">
-                            {isPopupOpen && (
-                                <PopupDom>
-                                    <PopupPostCode onClose={closePostCode}
-                                    onAddData={onAddData}
-                                    />
-                                </PopupDom>
-                            )}
-                    </div>
-                </div>
-                <div>
-                <button type="submit">등록</button>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th colSpan={2}>
+                                회원가입
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>아이디</td>
+                            <td>
+                                <input type="text" name="id" value={formData.id} onChange={onChange}/>
+                                <button>중복확인</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호</td>
+                            <td>
+                            <input type="password" name="password" value={formData.password} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>비밀번호 확인</td>
+                            <td>
+                            <input type="password" name="passwordCk" value={formData.passwordCk} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>이름</td>
+                            <td>
+                            <input type="text" name="name" value={formData.name} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>전화번호</td>
+                            <td>
+                            <input type="text" name="phone" value={formData.phone} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td>
+                            <input type="text" name="email" value={formData.email} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>주소</td>
+                            <td>
+                                <input name="add" type="text" value={formData.add} onChange={onChange}/>
+                                <input name="adddetail" type="text" value={formData.adddetail} onChange={onChange}/>
+                                <button type="button" onClick={openPostCode}>우편번호 검색</button>
+                                <div id="popupDom">
+                                {isPopupOpen && (
+                                    <PopupDom>
+                                        <PopupPostCode onClose={closePostCode}
+                                        onAddData={onAddData}
+                                        />
+                                    </PopupDom>
+                                )}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan={2} id="btns">
+                               <button type="submit">등록</button>
                                <button type="reset">취소</button>
-                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </form>
+
         </div>
     );
 };
