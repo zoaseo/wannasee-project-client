@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MemberLogin.css'
 import { API_URL } from '../config/contansts';
-import { useState, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 
@@ -89,14 +89,14 @@ const MemberLogin = () => {
                                 type="submit">로그인</button>
                                <button type="reset">취소</button>
                             </td>
+                        </tr>
+                        <tr>   
                             <td colSpan={2} id="btns">
                                <button onClick={()=>{
                                 sessionStorage.clear();
                                 setSavedLoginId(sessionStorage.getItem("loginId"));
                                 setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
                                }} type="submit">로그아웃</button>
-                            </td>
-                            <td colSpan={2} id="btns">
                                <button onClick={()=>{
                                 sessionStorage.removeItem("loginId");
                                 setSavedLoginId(sessionStorage.getItem("loginId"));

@@ -75,10 +75,10 @@ const Createconcert = () => {
     }
 
     return (
-        <div className="ce_concert">
+        <div id="create_concert">
             <form onSubmit={onSubmit}> 
             <table>
-                    <tbody>
+                <tbody>
                         <tr>
                             <th colSpan={2}>
                                 공연 정보 등록하기
@@ -169,7 +169,7 @@ const Createconcert = () => {
                                 <textarea name="c_description" type="text" onChange={onChange} value={formData.c_description}></textarea>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="btntr">
                             <td colSpan={2} id="btns">
                                <button type="submit">등록</button>
                                <button type="reset">취소</button>

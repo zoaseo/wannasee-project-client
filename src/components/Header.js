@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import './Header.css';
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
                     <h1><Link to ='/'>WANNASEE?</Link></h1>
                     <ul>
                         <li><Link to="/insert">insert</Link></li>
-                        <li><Link to="/login">login</Link></li>
+                        <li><NavLink to="/login" className={({ isActive })=> (isActive? "orange": "")}>login</NavLink></li>
                         <li><Link to="/join">join</Link></li>
                         <li><Link to="/mypage">mypage</Link></li>
                     </ul>
@@ -22,7 +22,7 @@ const Header = () => {
             </div>
             <nav>
                 <ul id="category">
-                    <li id="genre"><Link to ='/genre'>#장르별</Link></li>
+                    <li id="genre"><Link to ='/genre/all'>#장르별</Link></li>
                     <li id="region"><Link to ='/region'>#지역별</Link></li>
                     <li id="period"><Link to ='/period'>#기간별</Link></li>
                 </ul>

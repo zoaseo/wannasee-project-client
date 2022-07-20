@@ -27,7 +27,7 @@ function App() {
         <Route path="/login" element={<MemberLogin/>}/>
         <Route path="/join" element={<MemberJoin/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
-        <Route path="/genre" element={<GenrePage/>}/>
+        <Route path="/genre" element={<GenrePage/>}/>\
         <Route path="/genre/:genre" element={<ConcertGenre/>}/>
         <Route path="/region" element={<RegionPage/>}/>
         <Route path="/region/:rank_location" element={<ConcertRegion/>}/>
