@@ -21,12 +21,14 @@ const Header = () => {
                 </div>
             </div>
             <nav>
-                <ul>
-                    <li id="genre"><Link to ='/genre'>장르별</Link></li>
-                    <li id="region"><Link to ='/region'>지역별</Link></li>
-                    <li id="period"><Link to ='/period'>기간별</Link></li>
-                    <li id="welcome"><Link to ='/'>Welcome</Link></li>
+                <ul id="category">
+                    <li id="genre"><Link to ='/genre'>#장르별</Link></li>
+                    <li id="region"><Link to ='/region'>#지역별</Link></li>
+                    <li id="period"><Link to ='/period'>#기간별</Link></li>
                 </ul>
+                {/* <ul>
+                    <li id="welcome"><Link to ='/'>Welcome</Link></li>
+                </ul> */}
             </nav>
             <div id="Arrimg" onClick={go_up}><img src='/arrow.png' alt="arrow_pic" /></div>
         </div>

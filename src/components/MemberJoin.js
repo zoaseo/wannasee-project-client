@@ -129,14 +129,14 @@ const MemberJoin = () => {
                     <tbody>
                         <tr>
                             <th colSpan={2}>
-                                회원가입
+                                🎉 회원가입
                             </th>
                         </tr>
                         <tr>
                             <td>아이디</td>
                             <td>
                                 <input type="text" id="id" name="id" value={formData.id} onChange={onChange} />
-                                <span onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
+                                <span id ="duCk" onClick={(e)=>{OnIdCh(e);}}>👈 중복확인</span>
                             </td>
                         </tr>
                         <tr>
