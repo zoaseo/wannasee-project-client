@@ -75,157 +75,108 @@ const Createconcert = () => {
     }
 
     return (
-        <div id="create_concert">
-            <h2>공연 정보 등록하기</h2>
+        <div className="ce_concert">
             <form onSubmit={onSubmit}> 
-                <div id='imgimgimg'>
-                    <input name="c_imgsrc" type="file" onChange={onChangeImg}/>
-                </div>
-                <div id="edit_genre">
-                    <span className='radios'>
-                    발라드<input name="c_genre" type="radio" 
-                    value="발라드"
-                    onChange={onChange}
-                    checked={formData.c_genre === "발라드" ? true : false}/>
-                    </span>
-                    <span className='radios'>
-                    트로트<input name="c_genre" type="radio" 
-                    value="트로트"
-                    onChange={onChange}
-                    checked={formData.c_genre === "트로트" ? true : false}/>
-                    </span>
-                    <span className='radios'>
-                    락/메탈<input name="c_genre" type="radio" 
-                    value="락/메탈"
-                    onChange={onChange}
-                    checked={formData.c_genre === "락/메탈" ? true : false}/>
-                    </span>
-                    <span className='radios'>
-                    힙합<input name="c_genre" type="radio" 
-                    value="힙합"
-                    onChange={onChange}
-                    checked={formData.c_genre === "힙합" ? true : false}/>
-                    </span>
-            </div>
-            <div>
-                <span className="title left_move2">타이틀</span> 
-                <input name="c_title" type="text" 
-                value={formData.c_title}
-                onChange={onChange}/>
-            </div>
-            <div>
-                <span className="title">가수</span>
-                <input name="c_singer" type="text" 
-                value={formData.c_singer}
-                onChange={onChange}/>
-            </div>
-            <div>
-            <span className='title'>지역</span> 
-            <input name="c_location" type="text" 
-            value={formData.c_location}
-            onChange={onChange}/>
-            </div>
-            <div>
-            <span className='title'>장소</span> 
-            <input name="c_concert_place" type="text" 
-            value={formData.c_concert_place}
-            onChange={onChange}/>
-            </div>
-            <div>
-            <span className='title'>가격</span> 
-            <input name="c_price" type="text" 
-            value={formData.c_price}
-            onChange={onChange}/>
-            </div>
-            <div>
-            <span className='title'>날짜</span>
-            <input name="c_concertdate" type="date" 
-            value={formData.c_concertdate}
-            onChange={onChange}/>
-            </div>
-            <div>
-            <span className='title left_move'>시작시간</span>
-            <input name="c_start_time" type="text" 
-            value={formData.c_start_time}
-            onChange={onChange}/>
-            </div>
-            <div>
-            <span className='title left_move'>종료시간</span>
-            <input name="c_end_time" type="text" 
-            value={formData.c_end_time}
-            onChange={onChange}/>
-            </div>
-            <div id="concert_desc">
-            <span className='title left_move upspan'>공연내용</span>
-            <textarea name="c_description" type="text" onChange={onChange} value={formData.c_description}></textarea>
-            </div>
-            <div id="btns">
-            <button type="submit">등록</button>
-            <button type="reset">취소</button>    
-            </div>        
-            {/* <div>
-            <input name="c_imgsrc" type="file" 
-            value={formData.c_imgsrc}
-            onChange={onChange}/>
-            </div>
-            <input name="c_title" type="text" 
-            value={formData.c_title}
-            onChange={onChange}/>
-
-            <input name="c_singer" type="text" 
-            value={formData.c_singer}
-            onChange={onChange}/>
-            */}
-            {/* 발라드<input name="c_genre" type="radio" 
-            value="발라드"
-            onChange={onChange}
-            checked={formData.c_genre === "발라드" ? true : false}/>
-
-            트로트<input name="c_genre" type="radio" 
-            value="트로트"
-            onChange={onChange}
-            checked={formData.c_genre === "트로트" ? true : false}/>
-        
-            락/메탈<input name="c_genre" type="radio" 
-            value="락/메탈"
-            onChange={onChange}
-            checked={formData.c_genre === "락/메탈" ? true : false}/>
-
-            힙합<input name="c_genre" type="radio" 
-            value="힙합"
-            onChange={onChange}
-            checked={formData.c_genre === "힙합" ? true : false}/>
-            */}
-            {/* <input name="c_location" type="text" 
-            value={formData.c_location}
-            onChange={onChange}/>
-
-            <input name="c_concert_place" type="text" 
-            value={formData.c_concert_place}
-            onChange={onChange}/>
-
-            <input name="c_price" type="text" 
-            value={formData.c_price}
-            onChange={onChange}/>
-
-            <input name="c_concertdate" type="date" 
-            value={formData.c_concertdate}
-            onChange={onChange}/>
-        
-            <input name="c_start_time" type="text" 
-            value={formData.c_start_time}
-            onChange={onChange}/>
-            
-            <input name="c_end_time" type="text" 
-            value={formData.c_end_time}
-            onChange={onChange}/>
-
-            <input name="c_description" type="text" 
-            value={formData.c_description}
-            onChange={onChange}/>
-        
-            <button type="submit">등록</button>
-            <button type="reset">취소</button>             */}
+            <table>
+                    <tbody>
+                        <tr>
+                            <th colSpan={2}>
+                                공연 정보 등록하기
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>이미지등록</td>
+                            <td id='imgimgimg'>
+                                <input name="c_imgsrc" type="file" onChange={onChangeImg}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>장르선택</td>
+                            <td>
+                                <span className='radios'>
+                                발라드
+                                <input name="c_genre" type="radio" value="발라드" onChange={onChange}
+                                checked={formData.c_genre === "발라드" ? true : false}/>
+                                </span>
+                                <span className='radios'>
+                                트로트
+                                <input name="c_genre" type="radio" value="트로트" onChange={onChange}
+                                checked={formData.c_genre === "트로트" ? true : false}/>
+                                </span>
+                                <span className='radios'>
+                                락/메탈
+                                <input name="c_genre" type="radio" value="락/메탈" onChange={onChange}
+                                checked={formData.c_genre === "락/메탈" ? true : false}/>
+                                </span>
+                                <span className='radios'>
+                                힙합
+                                <input name="c_genre" type="radio" value="힙합" onChange={onChange}
+                                checked={formData.c_genre === "힙합" ? true : false}/>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>타이틀</td>
+                            <td>
+                                <input name="c_title" type="text" value={formData.c_title} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>가수</td>
+                            <td>
+                                <input name="c_singer" type="text" value={formData.c_singer} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>지역</td>
+                            <td>
+                                <input name="c_location" type="text" value={formData.c_location} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>장소</td>
+                            <td>
+                                <input name="c_concert_place" type="text" value={formData.c_concert_place} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>가격</td>
+                            <td>
+                                <input name="c_price" type="text" value={formData.c_price} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>날짜</td>
+                            <td>
+                            <input name="c_concertdate" type="date" value={formData.c_concertdate} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>시작시간</td>
+                            <td>
+                            <input name="c_start_time" type="text" value={formData.c_start_time} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>종료시간</td>
+                            <td>
+                                <input name="c_end_time" type="text" value={formData.c_end_time} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr id="con_desc">
+                            <td>공연내용</td>
+                            <td>
+                                <textarea name="c_description" type="text" onChange={onChange} value={formData.c_description}></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan={2} id="btns">
+                               <button type="submit">등록</button>
+                               <button type="reset">취소</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </form>
         </div>
     );

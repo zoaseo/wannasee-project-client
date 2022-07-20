@@ -7,6 +7,7 @@ import PopupDom from "./PopupDom"
 import PopupPostCode from "./PopupPostCode"
 
 const MemberJoin = () => {
+   
     const navigate = useNavigate(); // 리다이렉션
      // 우편번호 관리하기
      const onAddData = (data) => {
@@ -109,10 +110,12 @@ const MemberJoin = () => {
             }
         });
         if(sameNum !== 0) {
+            setFormData({
+                ...formData,
+                id: "",
+            })
             alert('중복아이디입니다.');
-            userId.value = "";
-            userId.value = null;
-            
+
             console.log(userId)
             console.log(userId.value)
         }else {
@@ -122,67 +125,18 @@ const MemberJoin = () => {
     return (
         <div id="memberJoin">
             <form onSubmit={onSubmit}>
-                {/* <div className='formItem'>
-                    <span>아이디</span>	
-                    <input required type="text" id="id" name="id" value={formData.id} onChange={onChange}/>
-                    <input required id="chchch" type="text" value="" onClick={(e)=>{OnIdCh(e);}} />
-                    <span onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
-                </div>     
-                <div className='formItem'>
-                    <span>비밀번호</span>	
-                    <input type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
-                </div>    
-                <div className='formItem'>
-                    <span>비밀번호 확인</span>	
-                    <input type="password" id="passwordCk" name="passwordCk" value={formData.passwordCk} onChange={(e)=>{onChange(e); OnPwCh(e);}}/>
-                    <span id="passInform"></span>
-                </div>     
-                <div className='formItem'>
-                    <span>이름</span>	
-                    <input type="text" name="name" value={formData.name} onChange={onChange}/>
-                </div>     
-                <div className='formItem'>
-                    <span>전화번호</span>	
-                    <input type="text" name="phone" value={formData.phone} onChange={onChange}/>
-                </div>
-                <div className='formItem'>
-                    <span>이메일</span>	
-                    <input type="text" name="email" value={formData.email} onChange={onChange}/>
-                </div>
-                <div className='formItem'>  
-                <input name="add" type="text"
-                        value={formData.add}
-                        onChange={onChange}/>
-                        <input name="adddetail" type="text"
-                        value={formData.adddetail}
-                        onChange={onChange}/>
-                        <button type="button" onClick={openPostCode}>우편번호 검색</button>
-                        <div id="popupDom">
-                            {isPopupOpen && (
-                                <PopupDom>
-                                    <PopupPostCode onClose={closePostCode}
-                                    onAddData={onAddData}
-                                    />
-                                </PopupDom>
-                            )}
-                    </div>
-                </div>
-                <div>
-                    <button type="submit">등록</button>
-                    <button type="reset">취소</button>
-                </div> */}
                 <table>
                     <tbody>
                         <tr>
                             <th colSpan={2}>
-                                회원가입
+                                🎉 회원가입
                             </th>
                         </tr>
                         <tr>
                             <td>아이디</td>
                             <td>
-                                <input type="text" id="id" name="id" value={formData.id} onChange={onChange}/>
-                                <span onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
+                                <input type="text" id="id" name="id" value={formData.id} onChange={onChange} />
+                                <span id ="duCk" onClick={(e)=>{OnIdCh(e);}}>👈 중복확인</span>
                             </td>
                         </tr>
                         <tr>
@@ -194,7 +148,8 @@ const MemberJoin = () => {
                         <tr>
                             <td>비밀번호 확인</td>
                             <td>
-                            <input type="password" id="passwordCk" name="passwordCk" value={formData.passwordCk} onChange={(e)=>{onChange(e); OnPwCh(e);}}/>
+                            <input type="password"  id="passwordCk" name="passwordCk" value={formData.passwordCk} onChange={(e)=>{onChange(e); OnPwCh(e);}}/>
+                            <span id="passInform"></span>
                             </td>
                         </tr>
                         <tr>

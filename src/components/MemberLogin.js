@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './MemberLogin.css'
 import { API_URL } from '../config/contansts';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useState, useNavigate, useParams } from 'react-router-dom';
 import useAsync from '../customHook/useAsync';
+import axios from 'axios';
 
 const MemberLogin = () => { 
     const getPassword = async (e) => {
@@ -52,7 +52,7 @@ const MemberLogin = () => {
                     <tbody>
                         <tr>
                             <th colSpan={2}>
-                                로그인
+                            🔑 Login
                             </th>
                         </tr>
                         <tr>
