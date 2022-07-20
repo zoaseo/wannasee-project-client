@@ -1,7 +1,7 @@
 #memberLogin {
-    height: 700px;
+    height: 820px;
     background-color:#FEBF63;
-    padding-top: 60px;
+    padding-top: 220px;
 }
 #memberLogin form{
     width: 100%;
@@ -14,42 +14,38 @@
     max-width: 800px;
     margin: 0 auto;
     border-radius: 25px;
-    height: 300px;
     font-size: 16px;
 }
 #memberLogin form table th{
-    padding: 10px 0;
+    padding: 30px 0;
     font-size: 24px;
 }
 #memberLogin form table td{
-    padding-left: 40px;
-}
-#btns {
-    text-align: center;
-    padding-right: 40px;
-}
-button {
-    outline: none;
-    border: none;
-    background-color: #FEBF63;
-    margin: 0 5px;
-    cursor: pointer;
-    padding: 2px 8px;
-    color: white;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 250px;
 }
 #memberLogin input {
     width: 180px;
     height: 25px;
-    margin-right: 10px;
     outline: none;
     border: none;
     padding: 3px;
     border-bottom: 5px solid #FEBF63;
+    margin-left: -350px;
+    margin-bottom: 0px;
 }
-#btns button {
-    color: #FEBF63;
-    background-color: #fff;
+#memberLogin #btns {
+    padding-left: 40px;
+    text-align: center;
+}
+#memberLogin #btns button {
+    color: #fff;
+    background-color: black;
     font-weight: bold;
     font-size: 16px;
-    margin: 10px 0;
+    margin-top: 40px;
+    width: 90px;
+    height: 30px
 }

@@ -1,34 +1,40 @@
-#edit_concert {
-    height: 800px;
+.ce_concert {
+    height: 1000px;
+    background-color:#FEBF63;
+    padding-top: 60px;
 }
-#edit_concert h2 {
-    padding: 50px 400px;
-}
-#edit_concert form{
+.ce_concert form{
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  
 }
-#edit_concert form div {
-    margin: 5px 0;
+.ce_concert form table {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 25px;
+    font-size: 16px;
 }
-#edit_concert form .title {
-    margin-right: 80px;
+.ce_concert form table th{
+    padding: 30px 0;
+    font-size: 24px;
+}
+.ce_concert form table td {
+    padding-left: 70px;
+    height: 40px;
+}
+#btns {
+    text-align: center;
+    padding-bottom: 30px;
+}
+#btns button {
+    color: #FEBF63;
+    background-color: #fff;
     font-weight: bold;
-    font-size: 18px;
-}
-#edit_concert form .left_move {
-    margin-right: 45px;
-}
-#edit_concert form .left_move2 {
-    margin-right: 62px;
-}
-.radios {
-    margin-right: 20px;
+    font-size: 16px;
 }
 textarea {
     width: 500px;
@@ -36,33 +42,28 @@ textarea {
     padding: 3px;
     resize: none;
 }
-#edit_concert input {
-    width: 500px;
-    height: 30px;
-}
-#edit_genre {
-    padding-left: 80px;
-}
-#edit_genre:not(:nth-child(2)) input {
-    width: 15px;
-    height: 12px;
-}
-#edit_genre:not(:nth-child(2)) .title {
-    margin-right: 120px;
-}
-.upspan {
-    display: block;
-
-}
-#concert_desc {
-    display: flex;
-}
-#edit_concert #btns {
-    margin-left: 550px;
-}
-#edit_concert #btns button {
+.ce_concert input {
+    width: 180px;
+    height: 40px;
+    margin-right: 10px;
     outline: none;
     border: none;
-    background-color: #fff;
-    margin: 0 5px;
+    padding: 3px;
+    border-bottom: 5px solid #FEBF63;
+}
+#imgimgimg input {
+    border: none;
+    width: 350px;
+    height: 40px;
+}
+.ce_concert .radios input{
+    width: 13px;
+    height: 13px;
+}
+input, textarea {
+    outline: none;
+    padding: 3px;
+}
+#con_desc {
+    height: 280px;
 }

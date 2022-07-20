@@ -1,7 +1,7 @@
 #memberJoin {
-    height: 700px;
+    height: 820px;
     background-color:#FEBF63;
-    padding-top: 60px;
+    padding-top: 120px;
 }
 #memberJoin form{
     width: 100%;
@@ -18,10 +18,13 @@
     font-size: 16px;
 }
 #memberJoin form table th{
-    padding: 10px 0;
+    padding: 30px 0;
     font-size: 24px;
 }
 #memberJoin form table td{
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
     padding-left: 40px;
 }
 #btns {
@@ -34,7 +37,7 @@ button {
     background-color: #FEBF63;
     margin: 0 5px;
     cursor: pointer;
-    padding: 2px 8px;
+    padding: 4px 20px;
     color: white;
 }
 #memberJoin input {
@@ -47,8 +50,12 @@ button {
     border-bottom: 5px solid #FEBF63;
 }
 #btns button {
-    color: #FEBF63;
-    background-color: #fff;
+    color: #fff;
+    background-color: black;
     font-weight: bold;
     font-size: 16px;
+    margin-top: 40px;
+}
+#duCk {
+    font-size: 14px;
 }
