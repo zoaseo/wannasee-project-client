@@ -181,20 +181,20 @@ const MemberJoin = () => {
                         <tr>
                             <td>아이디</td>
                             <td>
-                                <input type="text" name="id" value={formData.id} onChange={onChange}/>
+                                <input type="text" id="id" name="id" value={formData.id} onChange={onChange}/>
                                 <span onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
                             </td>
                         </tr>
                         <tr>
                             <td>비밀번호</td>
                             <td>
-                            <input type="password" name="password" value={formData.password} onChange={onChange}/>
+                            <input type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
                             </td>
                         </tr>
                         <tr>
                             <td>비밀번호 확인</td>
                             <td>
-                            <input type="password" name="passwordCk" value={formData.passwordCk} onChange={(e)=>{onChange(e); OnPwCh(e);}}/>
+                            <input type="password" id="passwordCk" name="passwordCk" value={formData.passwordCk} onChange={(e)=>{onChange(e); OnPwCh(e);}}/>
                             </td>
                         </tr>
                         <tr>
