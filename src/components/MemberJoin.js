@@ -79,7 +79,7 @@ const MemberJoin = () => {
         axios.post(`${API_URL}/join`,formData)
         .then((result)=>{
             console.log(result);
-            navigate("/"); // 리다이렉션 추가
+            navigate(-1); // 리다이렉션 추가
         })
         .catch(e=>{
             console.log(e);

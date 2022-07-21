@@ -30,6 +30,18 @@ a { text-decoration: none; color: inherit;}
   top: 50%;
   transform: translateY(-50%);
 }
+.Allpage #all_ul li{
+  transition: 0.3s;
+}
+.Allpage #all_ul > li:hover{
+  color: #ea4949;
+}
+.Allpage #all_ul #monthly:hover #monthdiv{
+  color: black;
+}
+.Allpage #all_ul #monthly #monthdiv li:hover{
+  color: #ea4949;
+} 
 
 .component {
   width: 100%;
@@ -45,7 +57,7 @@ a { text-decoration: none; color: inherit;}
 .AllContent {
   width: 30%;
   margin-left: 3.3333%;
-  height: 600px;
+  height: 700px;
   position: relative;
   /* padding-top: 80px; */
   text-align: center;

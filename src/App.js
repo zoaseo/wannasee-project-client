@@ -15,12 +15,13 @@ import ConcertRegion from './region/index_r';
 import ConcertWeekend from './period/index_w';
 import MemberJoin from './components/MemberJoin';
 import MyPage from './components/MyPage';
+import { ResultContextProvider } from './Contexts/context';
 
 function App() {
  
   return (
     <div className="App">
-      {/* <div class="cursor"></div> */}
+      <ResultContextProvider>
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
@@ -38,6 +39,7 @@ function App() {
         <Route path="/insert" element={<Createconcert/>}/>
       </Routes>
       <Footer/>
+      </ResultContextProvider>
     </div>
   );
 }

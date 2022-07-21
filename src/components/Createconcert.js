@@ -67,7 +67,7 @@ const Createconcert = () => {
         axios.post(`${API_URL}/addConcert`,formData)
         .then((result)=>{
             console.log(result);
-            navigate("/"); // 리다이렉션 추가
+            navigate(-1); // 리다이렉션 추가
         })
         .catch(e=>{
             console.log(e);
@@ -81,7 +81,7 @@ const Createconcert = () => {
                 <tbody>
                         <tr>
                             <th colSpan={2}>
-                                공연 정보 등록하기
+                                🎵 공연 정보 등록하기
                             </th>
                         </tr>
                         <tr>

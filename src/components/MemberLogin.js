@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import './MemberLogin.css'
 import { API_URL } from '../config/contansts';
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
-import useAsync from '../customHook/useAsync';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+// import useAsync from '../customHook/useAsync';
 import axios from 'axios';
+import { useResultContext } from '../Contexts/context';
 
 const MemberLogin = () => { 
     const navigate = useNavigate();
     let [loginId, setLoginId] = useState("");
     let [loginPassword, setLoginPassword] = useState("");
-    let [savedLoginId, setSavedLoginId] = useState("");
-    let [savedLoginPassword, setSavedLoginPassword] = useState("");
+    const { savedLoginId, setSavedLoginId } = useResultContext();
+    const { savedLoginPassword, setSavedLoginPassword } = useResultContext("")
+    // let [savedLoginId, setSavedLoginId] = useState("");
+    // let [savedLoginPassword, setSavedLoginPassword] = useState("");
     const Login = async () => {
         let userId = document.querySelector('#userID');
         let userPw = document.querySelector('#userPW');
@@ -42,13 +45,14 @@ const MemberLogin = () => {
                     setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
                     console.log(JSON.stringify(sessionStorage));
                     navigate('/');
+                    console.log(sessionStorage);
                 } else {
                     alert("비밀번호가 일치하지 않습니다.");
                 }
             }
         }
     }
-    console.log(savedLoginId);
+    // console.log(savedLoginId);
     // console.log(loginId);
     const Logout = async () => {
         sessionStorage.clear();
@@ -87,16 +91,15 @@ const MemberLogin = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td colSpan={2} id="btns">
-                               <span to onClick={()=>{
+                            <td colSpan={2} id="spans">
+                               <span onClick={()=>{
                                 // sessionStorage.setItem("loginId", loginId);
                                 // sessionStorage.setItem("loginPassword", loginPassword);
 
                                 // setSavedLoginId(sessionStorage.getItem("loginId"));
                                 // setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
                                 Login();
-                               }}
-                                >로그인</span>
+                               }} id="span_login">로그인</span>
                                {/* <button onClick={()=>{
                                 sessionStorage.clear();
                                 setSavedLoginId(sessionStorage.getItem("loginId"));
@@ -107,7 +110,7 @@ const MemberLogin = () => {
                                 // setSavedLoginId(sessionStorage.getItem("loginId"));
                                 // setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
                                 Logout();
-                               }} type="submit">로그아웃</span>
+                                }}  id="span_logout"> 로그아웃</span>
                             </td>
                         </tr>
                         {/* <tr>
