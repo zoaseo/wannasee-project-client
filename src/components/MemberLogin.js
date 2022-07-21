@@ -10,10 +10,10 @@ export const MemberLogin = () => {
     const navigate = useNavigate();
     let [loginId, setLoginId] = useState("");
     let [loginPassword, setLoginPassword] = useState("");
-    const { savedLoginId, setSavedLoginId } = useResultContext();
-    const { savedLoginPassword, setSavedLoginPassword } = useResultContext("")
-    // let [savedLoginId, setSavedLoginId] = useState("");
-    // let [savedLoginPassword, setSavedLoginPassword] = useState("");
+    // const { savedLoginId, setSavedLoginId } = useResultContext();
+    // const { savedLoginPassword, setSavedLoginPassword } = useResultContext("")
+    let [savedLoginId, setSavedLoginId] = useState("");
+    let [savedLoginPassword, setSavedLoginPassword] = useState("");
     const Login = async () => {
         let userId = document.querySelector('#userID');
         let userPw = document.querySelector('#userPW');
@@ -45,7 +45,7 @@ export const MemberLogin = () => {
                     setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
                     console.log(JSON.stringify(sessionStorage));
                     navigate('/');
-                    console.log(sessionStorage);
+                    // console.log(sessionStorage);
                 } else {
                     alert("비밀번호가 일치하지 않습니다.");
                 }

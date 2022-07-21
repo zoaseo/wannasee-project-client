@@ -13,6 +13,8 @@ const CounterContainer = () => {
     // 각 액션을 dispatch하는 함수
     const onIncrease = () => dispatch(increase());
     const onDecrease = () => dispatch(decrease());
+    // props.getNumber(number);
+//    getNumber(number);
     return (
         <div>
             <Counter 

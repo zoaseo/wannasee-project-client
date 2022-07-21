@@ -15,19 +15,16 @@ import ConcertRegion from './region/index_r';
 import ConcertWeekend from './period/index_w';
 import MemberJoin from './components/MemberJoin';
 import MyPage from './components/MyPage';
-import { ResultContextProvider } from './Contexts/context';
 
 function App() {
- 
   return (
     <div className="App">
-      <ResultContextProvider>
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
         <Route path="/login" element={<MemberLogin/>}/>
         <Route path="/join" element={<MemberJoin/>}/>
-        <Route path="/mypage" element={<MyPage/>}/>
+        <Route path="/mypage/:idid" element={<MyPage/>}/>
         <Route path="/genre" element={<GenrePage/>}/>\
         <Route path="/genre/:genre" element={<ConcertGenre/>}/>
         <Route path="/region" element={<RegionPage/>}/>
@@ -39,7 +36,6 @@ function App() {
         <Route path="/insert" element={<Createconcert/>}/>
       </Routes>
       <Footer/>
-      </ResultContextProvider>
     </div>
   );
 }

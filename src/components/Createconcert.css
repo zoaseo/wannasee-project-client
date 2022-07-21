@@ -74,6 +74,7 @@ input, textarea {
     text-align: center;
     margin: 0 10px;
     padding: 4px 20px;
+    cursor: pointer;
 }
 input::placeholder {
     font-size: 12px;

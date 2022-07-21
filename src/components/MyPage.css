@@ -1,5 +1,5 @@
 #Mypage {
-    height: 700px;
+    height: 850px;
     background-color:#FEBF63;
     padding-top: 60px;
 }
@@ -13,15 +13,25 @@
     width: 100%;
     max-width: 800px;
     border-radius: 25px;
-    height: 600px;
+    padding: 40px 20px;
     font-size: 16px;
-    
     text-align: center;
+    padding-right: 80px;
 }
 #Mypage form table th{
     padding: 10px 0;
+    padding-bottom: 40px;
     font-size: 24px;
 }
+#table_tr {
+    font-weight: bold;
+}
 #Mypage form table tr {
-    height: 20px;
+    height: 40px;
+}
+#noreserve {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 40px;
+    padding-top: 40px;
 }

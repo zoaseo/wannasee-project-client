@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import { useParams, useNavigate, Link } from 'react-router-dom';
@@ -6,17 +6,33 @@ import { API_URL } from '../config/contansts';
 import './Detailconcert.css';
 import CounterContainer from './CounterContainer';
 
-
 const Detailconcert = () => {
-    async function getConcerts(id){
-        const response = await axios.get(`${API_URL}/detailview/${id}`);
-        return response.data;
-    }  
     const { id } = useParams();
     const navigate = useNavigate();
     const [ state ] = useAsync(()=>getConcerts(id),[id]);
     const { loading, data:concert, error } = state;
+    const idid = sessionStorage.getItem('loginId');
+    // const [number, setNumber ] =useState(0)
+    // const getNumber = (number) => {
+    //     setNumber(number);
+    // }
+    // console.log(number);
+    async function getConcerts(id){
+        const response = await axios.get(`${API_URL}/detailview/${id}`);
+        return response.data;
+    }  
     
+    async function addReserve(){
+        axios.post(`${API_URL}/addReservation/${idid}`)
+        .then((result)=>{
+            console.log(result);
+            navigate(-1); // 리다이렉션 추가
+        })
+        .catch(e=>{
+            console.log(e);
+        })
+    }
+
     // 콘서트 삭제
     const onDelete = () => {
         if(window.confirm("정말 삭제하시겠습니까?")){
@@ -35,7 +51,7 @@ const Detailconcert = () => {
     }
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
-    if(!concert) return <div>로딩중입니다.</div>
+    if(!concert) return null;
 
     return (
         <div>
@@ -58,7 +74,7 @@ const Detailconcert = () => {
                     <div>🕒 공연 시간 {concert.start_time}시부터 {concert.end_time}시까지</div>
                     <div id="gopurchace">
                         <CounterContainer/>
-                        <div id="outerpur"><button id="purchace">티켓 구매하기</button></div>
+                        <Link to={`/mypage/${idid}`}><div id="outerpur"><button id="purchace" onClick={addReserve}>티켓 예매하기</button></div></Link>
                     </div>
                 </div>
             </div>
