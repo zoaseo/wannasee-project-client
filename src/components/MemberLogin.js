@@ -6,7 +6,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useResultContext } from '../Contexts/context';
 
-const MemberLogin = () => { 
+export const MemberLogin = () => { 
     const navigate = useNavigate();
     let [loginId, setLoginId] = useState("");
     let [loginPassword, setLoginPassword] = useState("");

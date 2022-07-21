@@ -35,7 +35,7 @@
     resize: none;
 }
 #create_concert input {
-    width: 180px;
+    width: 350px;
     height: 40px;
     margin-right: 10px;
     outline: none;
@@ -74,4 +74,10 @@ input, textarea {
     text-align: center;
     margin: 0 10px;
     padding: 4px 20px;
+}
+input::placeholder {
+    font-size: 12px;
+}
+#disdis {
+    display: none;
 }
