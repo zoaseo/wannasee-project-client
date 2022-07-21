@@ -16,6 +16,7 @@
     border-radius: 25px;
     height: 600px;
     font-size: 16px;
+    padding-bottom: 40px;
 }
 #memberJoin form table th{
     padding: 30px 0;
@@ -27,11 +28,11 @@
     font-weight: bold;
     padding-left: 40px;
 }
-#btns {
+#memberJoin #btns {
     text-align: center;
     padding-right: 40px;
 }
-button {
+#memberJoin button {
     outline: none;
     border: none;
     background-color: #FEBF63;
@@ -49,7 +50,7 @@ button {
     padding: 3px;
     border-bottom: 5px solid #FEBF63;
 }
-#btns button {
+#memberJoin #btns button {
     color: #fff;
     background-color: black;
     font-weight: bold;

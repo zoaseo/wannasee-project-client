@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './main.css';
 import "../aos.css";
+import Marquee from "react-fast-marquee";
 
 const MainPage = () => {
     useEffect(() => {
@@ -15,6 +16,7 @@ const MainPage = () => {
             <video loop autoPlay muted>
                 <source src="bts.mp4" type="video/mp4"/>
             </video>
+            <Marquee speed={150} pauseOnHover gradient={false}>WANNASEE | WANNASEE는 올바른 공연문화를 지향합니다. 삶에 휴식 혹은 영감이 필요할 때, WANNASEE와 함께 떠나요! Discover the unique atmosphere of our private residential club communities. Once experienced. Never forgotten.</Marquee>
             <div id="second_content">
                 <div id='wtw'>
                     <div id="wtwspan">

@@ -125,3 +125,12 @@
 #WNNC img {
     width: 100%;
 }
+.marquee-container {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    display: none;
+    margin-top: -4px;
+    font-size: 20px;
+    font-weight: bold;
+}

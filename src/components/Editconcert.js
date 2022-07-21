@@ -9,7 +9,8 @@ const Editconcert = () => {
     const navigate = useNavigate(); // 리다이렉션
     const { id } = useParams();
     const [ formData, setFormData ] = useState({
-        // c_imgsrc: "",
+        c_rank_location: "",
+        c_imgsrc: "",
         c_title: "",
         c_singer: "",
         c_genre: "",
@@ -29,7 +30,8 @@ const Editconcert = () => {
     const { loading, data:concert, error } = state;
     useEffect(()=>{
         setFormData({
-            // c_imgsrc: concert? concert.imgsrc : "",
+            c_rank_location: concert? concert.rank_location : "",
+            c_imgsrc: concert? concert.imgsrc : "",
             c_title: concert? concert.title : "",
             c_singer: concert? concert.singer : "",
             c_genre: concert? concert.genre : "",
@@ -42,6 +44,7 @@ const Editconcert = () => {
             c_description: concert? concert.description : "",
         })
     },[concert])
+    console.log(formData.c_imgsrc);
     const onChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -76,18 +79,32 @@ const Editconcert = () => {
             }
         }else{
             alert("수정이 취소되었습니다");
-        }
-        
+        }   
+    }
+    const onChangeImg = (e) => {
+        const file = e.target.files[0];
+        const imgsrc = "image/"+file.name;
+        setFormData({
+            ...formData,
+            c_imgsrc: imgsrc
+        })
     }
     function updateConcert(){
         axios.put(`${API_URL}/editConcert/${id}`,formData)
         .then((result)=>{
             console.log(result);
-            navigate("/"); // 리다이렉션 추가
+            navigate(-1); // 리다이렉션 추가
         })
         .catch(e=>{
             console.log(e);
         })
+    }
+    const imgname = formData.c_imgsrc.split('/')[1];
+    function imgfake() {
+        let fake = document.querySelector('#fake');
+        let real = document.querySelector('#real');
+        console.log(real)
+        real.style.opacity = '1';
     }
     if(loading) return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>페이지를 나타낼 수 없습니다.</div>
@@ -99,10 +116,21 @@ const Editconcert = () => {
                     <tbody>
                         <tr>
                             <th colSpan={2}>
-                                공연 정보 수정하기
+                                👀 공연 정보 수정하기
                             </th>
                         </tr>
                         {/* <input name="c_imgsrc" type="file" value={formData.c_imgsrc} onChange={onChange}/> */}
+                        <tr>
+                            <td>이미지등록</td>
+                            <td id='imgimgimg'>
+                                <img src={`../${formData.c_imgsrc}`}/>
+                                <p id="fff" onClick={imgfake}>    
+                                <div id='fakebox'>파일 선택</div>
+                                <span id='fake'>{imgname}</span>
+                                </p>
+                                <input id='real' name="c_imgsrc" type="file" onChange={onChangeImg}/>
+                            </td>
+                        </tr>
                         <tr>
                             <td>장르선택</td>
                             <td>
@@ -147,6 +175,19 @@ const Editconcert = () => {
                             </td>
                         </tr>
                         <tr>
+                            <td>지역2</td>
+                            <td>
+                                <input name="c_rank_location" type="text" value={formData.c_rank_location} onChange={onChange}/>
+                                {/* // placeholder="서울:1 / 부산:2 / 대구:3 / 인천:4 / 광주:5 / 대전:6 / 울산:7 / 기타:8 "/> */}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>장소</td>
+                            <td>
+                            <input name="c_concert_place" type="text" value={formData.c_concert_place} onChange={onChange}/>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>장소</td>
                             <td>
                             <input name="c_concert_place" type="text" value={formData.c_concert_place} onChange={onChange}/>
@@ -182,7 +223,7 @@ const Editconcert = () => {
                             </td>
                         </tr>
                         <tr id="btns">
-                            <td colspan={2} id="btns">
+                            <td colSpan={2} id="btns">
                                 <button type="submit">등록</button>
                                 <button type="reset">취소</button>   
                             </td> 

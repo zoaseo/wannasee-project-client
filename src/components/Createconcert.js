@@ -12,6 +12,7 @@ const Createconcert = () => {
         c_singer: "",
         c_genre: "",
         c_location: "",
+        c_rank_location: "",
         c_price: "",
         c_concertdate: "",
         c_start_time: "",
@@ -53,7 +54,8 @@ const Createconcert = () => {
             formData.c_genre !== "" && formData.c_location !== "" &&
             formData.c_price !== "" && formData.c_concertdate !== "" && 
             formData.c_start_time !== "" && formData.c_end_time !== "" &&
-            formData.c_description !== "" && formData.c_concert_place !== ""){
+            formData.c_description !== "" && formData.c_concert_place !== "" &&
+            formData.c_rank_location !== ""){
                 insertConcert();
             }
             else {
@@ -67,27 +69,33 @@ const Createconcert = () => {
         axios.post(`${API_URL}/addConcert`,formData)
         .then((result)=>{
             console.log(result);
-            navigate("/"); // 리다이렉션 추가
+            navigate(-1); // 리다이렉션 추가
         })
         .catch(e=>{
             console.log(e);
         })
     }
-
+    function imgopen() {
+        let dis = document.querySelector('#disdis');
+        setTimeout(() => {
+            dis.style.display = "block";
+        }, 1000);
+    }
     return (
-        <div className="ce_concert">
+        <div id="create_concert">
             <form onSubmit={onSubmit}> 
             <table>
-                    <tbody>
+                <tbody>
                         <tr>
                             <th colSpan={2}>
-                                공연 정보 등록하기
+                                🎵 공연 정보 등록하기
                             </th>
                         </tr>
                         <tr>
                             <td>이미지등록</td>
                             <td id='imgimgimg'>
-                                <input name="c_imgsrc" type="file" onChange={onChangeImg}/>
+                                <img id='disdis' src={`../${formData.c_imgsrc}`}/>
+                                <input onClick={imgopen} name="c_imgsrc" type="file" onChange={onChangeImg}/>
                             </td>
                         </tr>
                         <tr>
@@ -134,6 +142,13 @@ const Createconcert = () => {
                             </td>
                         </tr>
                         <tr>
+                            <td>지역2</td>
+                            <td>
+                                <input name="c_rank_location" type="text" value={formData.c_rank_location} onChange={onChange}
+                                placeholder="서울:1 / 부산:2 / 대구:3 / 인천:4 / 광주:5 / 대전:6 / 울산:7 / 기타:8 "/>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>장소</td>
                             <td>
                                 <input name="c_concert_place" type="text" value={formData.c_concert_place} onChange={onChange}/>
@@ -169,7 +184,7 @@ const Createconcert = () => {
                                 <textarea name="c_description" type="text" onChange={onChange} value={formData.c_description}></textarea>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="btntr">
                             <td colSpan={2} id="btns">
                                <button type="submit">등록</button>
                                <button type="reset">취소</button>
