@@ -1,5 +1,5 @@
 .ce_concert {
-    height: 1000px;
+    height: 1100px;
     background-color:#FEBF63;
     padding-top: 60px;
 }
@@ -7,8 +7,6 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    display: flex;
-  
 }
 .ce_concert form table {
     background-color: white;
@@ -23,24 +21,29 @@
     font-size: 24px;
 }
 .ce_concert form table td {
-    padding-left: 70px;
-    height: 40px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 40px;
 }
-#btns {
+.ce_concert #btns {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
-#btns button {
-    color: #FEBF63;
-    background-color: #fff;
+.ce_concert #btns button {
+    color: #fff;
+    background-color: black;
     font-weight: bold;
     font-size: 16px;
+    margin: 0 5px;
+    padding: 4px 20px;
 }
 textarea {
     width: 500px;
     height: 200px;
     padding: 3px;
     resize: none;
+    border: 3px solid #FEBF63;
 }
 .ce_concert input {
     width: 180px;
@@ -55,6 +58,10 @@ textarea {
     border: none;
     width: 350px;
     height: 40px;
+}
+.ce_concert .radios {
+    font-weight: normal;
+    font-size: 16px;
 }
 .ce_concert .radios input{
     width: 13px;

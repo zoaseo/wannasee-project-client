@@ -83,7 +83,7 @@ const Editconcert = () => {
         axios.put(`${API_URL}/editConcert/${id}`,formData)
         .then((result)=>{
             console.log(result);
-            navigate("/"); // 리다이렉션 추가
+            navigate(-1); // 리다이렉션 추가
         })
         .catch(e=>{
             console.log(e);
@@ -99,7 +99,7 @@ const Editconcert = () => {
                     <tbody>
                         <tr>
                             <th colSpan={2}>
-                                공연 정보 수정하기
+                                👀 공연 정보 수정하기
                             </th>
                         </tr>
                         {/* <input name="c_imgsrc" type="file" value={formData.c_imgsrc} onChange={onChange}/> */}
@@ -182,7 +182,7 @@ const Editconcert = () => {
                             </td>
                         </tr>
                         <tr id="btns">
-                            <td colspan={2} id="btns">
+                            <td colSpan={2} id="btns">
                                 <button type="submit">등록</button>
                                 <button type="reset">취소</button>   
                             </td> 
