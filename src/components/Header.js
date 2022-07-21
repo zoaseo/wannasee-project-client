@@ -11,9 +11,9 @@ const Header = () => {
         window.scrollTo(0,0);
     }
     const Navigate = useNavigate();
-    const { savedLoginId, setSavedLoginId } = useResultContext('');
-    const { savedLoginPassword, setSavedLoginPassword } = useResultContext('');  
-    console.log(savedLoginId);
+    // const { savedLoginId, setSavedLoginId } = useResultContext('');
+    // const { savedLoginPassword, setSavedLoginPassword } = useResultContext('');  
+    // console.log(savedLoginId);
     console.log(sessionStorage)
     const idid = sessionStorage.getItem('loginId');
     function goHome() {
@@ -30,10 +30,10 @@ const Header = () => {
                     <div id="ticket_icon"><img src='/concert.png' alt="ticket"/></div>
                     <h1><Link to ='/'>WANNASEE?</Link></h1>
                     <ul>
-                        <li><Link to="/insert">insert</Link></li>
-                        {idid === null ? <li><Link to="/login">login</Link></li> : <><li> {idid}님 환영합니다~</li><li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li></>} 
-                        <li><Link to="/join">join</Link></li>
-                        <li><Link to="/mypage">mypage</Link></li>
+                        {idid === 'admin' ? <li><Link to="/insert">insert</Link></li> : ''} 
+                        {idid === null ? <li><Link to="/login">login</Link></li> : <><li> Welcome {idid} 💙</li><li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li></>} 
+                        {idid === null ? <li><Link to="/join">join</Link></li> : ''}    
+                        {idid === null ? '' :  <li><Link to={`/mypage/${idid}`}>mypage</Link></li>} 
                     </ul>
                 </div>
             </div>

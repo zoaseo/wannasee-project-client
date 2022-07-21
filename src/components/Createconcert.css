@@ -74,4 +74,5 @@ input, textarea {
     text-align: center;
     margin: 0 10px;
     padding: 4px 20px;
+    cursor: pointer;
 }
