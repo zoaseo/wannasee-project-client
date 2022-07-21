@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './MemberLogin.css'
 import { API_URL } from '../config/contansts';
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 
-const MemberLogin = () => { 
+export const MemberLogin = () => { 
+    const [loginId, setLoginId] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
+    const [savedLoginId, setSavedLoginId] = useState("");
+    const [savedLoginPassword, setSavedLoginPassword] = useState("");
+
     const navigate = useNavigate();
-    let [loginId, setLoginId] = useState("");
-    let [loginPassword, setLoginPassword] = useState("");
-    let [savedLoginId, setSavedLoginId] = useState("");
-    let [savedLoginPassword, setSavedLoginPassword] = useState("");
     const Login = async () => {
         let userId = document.querySelector('#userID');
         let userPw = document.querySelector('#userPW');
@@ -88,7 +89,7 @@ const MemberLogin = () => {
                         </tr>
                         <tr>
                             <td colSpan={2} id="btns">
-                               <span to onClick={()=>{
+                               <span onClick={()=>{
                                 // sessionStorage.setItem("loginId", loginId);
                                 // sessionStorage.setItem("loginPassword", loginPassword);
 
@@ -107,7 +108,7 @@ const MemberLogin = () => {
                                 // setSavedLoginId(sessionStorage.getItem("loginId"));
                                 // setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
                                 Logout();
-                               }} type="submit">로그아웃</span>
+                               }}>로그아웃</span>
                             </td>
                         </tr>
                         {/* <tr>
