@@ -12,6 +12,7 @@ const Detailconcert = () => {
     const [ state ] = useAsync(()=>getConcerts(id),[id]);
     const { loading, data:concert, error } = state;
     const idid = sessionStorage.getItem('loginId');
+    console.log('haha'+idid);
     // const [number, setNumber ] =useState(0)
     // const getNumber = (number) => {
     //     setNumber(number);
@@ -22,8 +23,22 @@ const Detailconcert = () => {
         return response.data;
     }  
     
+    const [ goData, setGoData ] = useState({
+        c_user_id: "",
+        c_user_title: "",
+        c_user_region: "",
+        c_user_location: "",
+        c_user_date: "",
+        c_user_start: "",
+        c_user_num: "",
+    })
+
     async function addReserve(){
-        axios.post(`${API_URL}/addReservation/${idid}`)
+        setGoData({
+            ...goData,
+            c_user_id: idid,
+        })
+        axios.post(`${API_URL}/addReservation`)
         .then((result)=>{
             console.log(result);
             navigate(-1); // 리다이렉션 추가
@@ -49,6 +64,7 @@ const Detailconcert = () => {
         }
 
     }
+
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!concert) return null;
