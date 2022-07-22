@@ -11,10 +11,9 @@ async function getConcerts(id){
     return response.data;
 }  
 
-const Detailconcert = () => {
+const Detailconcert = (number) => {
     const { id } = useParams();
     const navigate = useNavigate();
-   
     const idid = sessionStorage.getItem('loginId');
     const [ goData, setGoData ] = useState({
         c_user_id: "",
@@ -35,17 +34,23 @@ const Detailconcert = () => {
             c_user_location: concert? concert.concert_place : "",
             c_user_date: concert? concert.concertdate : "",
             c_user_start: concert? concert.start_time : "",
-            c_user_num :3,
+            c_user_num: "",
         })
     },[concert])
-
+    console.log(number);
     function addReserve(){
+        number = Number(number)
+        console.log(typeof(number));
+        setGoData({
+            ...goData,
+            c_user_num: number
+        })
         axios.put(`${API_URL}/addReservation`, goData)
         .then((result)=>{
-            console.log(result);
+            // console.log(result);
         })
         .catch(e=>{
-            console.log(e);
+            // console.log(e);
         })
     }
 
@@ -65,7 +70,9 @@ const Detailconcert = () => {
         }
 
     }
- 
+
+    
+
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!concert) return null;
@@ -90,7 +97,7 @@ const Detailconcert = () => {
                     <div id="div_date">{concert.concertdate} / ₩{concert.price}</div>
                     <div>🕒 공연 시간 {concert.start_time}시부터 {concert.end_time}시까지</div>
                     <div id="gopurchace">
-                        <CounterContainer/>
+                        <CounterContainer Detailconcert={Detailconcert}/>
                         <Link to={`/mypage/${idid}`}><div id="outerpur"><button id="purchace" onClick={addReserve}>티켓 예매하기</button></div></Link>
                     </div>
                 </div>
