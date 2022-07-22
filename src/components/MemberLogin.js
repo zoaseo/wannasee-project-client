@@ -7,11 +7,15 @@ import axios from 'axios';
 
 export const MemberLogin = () => { 
     const navigate = useNavigate();
+    // eslint-disable-next-line
     let [loginId, setLoginId] = useState("");
+    // eslint-disable-next-line
     let [loginPassword, setLoginPassword] = useState("");
     // const { savedLoginId, setSavedLoginId } = useResultContext();
     // const { savedLoginPassword, setSavedLoginPassword } = useResultContext("")
+    // eslint-disable-next-line
     let [savedLoginId, setSavedLoginId] = useState("");
+    // eslint-disable-next-line
     let [savedLoginPassword, setSavedLoginPassword] = useState("");
     const Login = async () => {
         let userId = document.querySelector('#userID');
@@ -29,6 +33,7 @@ export const MemberLogin = () => {
             } else {
                 const getId2 = getId[0].userId;
                 const getPw2 = getPw[0].password;
+                // eslint-disable-next-line
                 let userId_value = userId.value;
                 let userPw_value = userPw.value;
                 if(userPw_value === getPw2) {

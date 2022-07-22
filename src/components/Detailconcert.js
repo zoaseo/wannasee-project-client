@@ -43,9 +43,11 @@ const Detailconcert = () => {
             c_user_start: concert? concert.start_time : "",
             c_user_num: number
         })
+    // eslint-disable-next-line
     },[concert, number])
     useEffect(()=> {
         onReset();
+        // eslint-disable-next-line
     },[])
 
     function addReserve(){
