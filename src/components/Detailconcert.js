@@ -6,23 +6,16 @@ import { API_URL } from '../config/contansts';
 import './Detailconcert.css';
 import CounterContainer from './CounterContainer';
 
+async function getConcerts(id){
+    const response = await axios.get(`${API_URL}/detailview/${id}`);
+    return response.data;
+}  
+
 const Detailconcert = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [ state ] = useAsync(()=>getConcerts(id),[id]);
-    const { loading, data:concert, error } = state;
+   
     const idid = sessionStorage.getItem('loginId');
-    console.log('haha'+idid);
-    // const [number, setNumber ] =useState(0)
-    // const getNumber = (number) => {
-    //     setNumber(number);
-    // }
-    // console.log(number);
-    async function getConcerts(id){
-        const response = await axios.get(`${API_URL}/detailview/${id}`);
-        return response.data;
-    }  
-    
     const [ goData, setGoData ] = useState({
         c_user_id: "",
         c_user_title: "",
@@ -32,16 +25,24 @@ const Detailconcert = () => {
         c_user_start: "",
         c_user_num: "",
     })
-
-    async function addReserve(){
+    const [ state ] = useAsync(()=>getConcerts(id),[id]);
+    const { loading, data:concert, error } = state;
+    useEffect(()=>{
         setGoData({
-            ...goData,
             c_user_id: idid,
+            c_user_title: concert? concert.title : "",
+            c_user_region: concert? concert.location : "",
+            c_user_location: concert? concert.concert_place : "",
+            c_user_date: concert? concert.concertdate : "",
+            c_user_start: concert? concert.start_time : "",
+            c_user_num :3,
         })
-        axios.post(`${API_URL}/addReservation`)
+    },[concert])
+
+    function addReserve(){
+        axios.put(`${API_URL}/addReservation`, goData)
         .then((result)=>{
             console.log(result);
-            navigate(-1); // 리다이렉션 추가
         })
         .catch(e=>{
             console.log(e);
@@ -64,13 +65,13 @@ const Detailconcert = () => {
         }
 
     }
-
+ 
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!concert) return null;
-
     return (
         <div>
+
             <div id="detail_concert">
                 <div id='btns'>
                     <button><Link to={`/editConcert/${id}`}>수정</Link></button>
@@ -95,6 +96,7 @@ const Detailconcert = () => {
                 </div>
             </div>
             <div id="div_description">{concert.description}</div>
+
         </div>
     );
 };
