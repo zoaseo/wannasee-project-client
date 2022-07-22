@@ -105,12 +105,14 @@ export const MemberLogin = () => {
                                 setSavedLoginId(sessionStorage.getItem("loginId"));
                                 setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
                                }} type="submit">로그아웃</button> */}
-                                <span onClick={()=>{
+                                <Link to='/join'><span 
+                                // onClick={()=>{
                                 // sessionStorage.clear();
                                 // setSavedLoginId(sessionStorage.getItem("loginId"));
                                 // setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
-                                Logout();
-                                }}  id="span_logout"> 로그아웃</span>
+                                //Logout();
+                                //}}  
+                                id="span_logout">회원가입</span></Link>
                             </td>
                         </tr>
                         {/* <tr>

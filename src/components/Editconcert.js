@@ -101,10 +101,10 @@ const Editconcert = () => {
     }
     const imgname = formData.c_imgsrc.split('/')[1];
     function imgfake() {
-        let fake = document.querySelector('#fake');
-        let real = document.querySelector('#real');
-        console.log(real)
-        real.style.opacity = '1';
+        // let fake = document.querySelector('#fake');
+        // let real = document.querySelector('#real');
+        // console.log(real)
+        // real.style.opacity = '1';
     }
     if(loading) return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>페이지를 나타낼 수 없습니다.</div>
@@ -125,10 +125,10 @@ const Editconcert = () => {
                             <td id='imgimgimg'>
                                 <img src={`../${formData.c_imgsrc}`}/>
                                 <p id="fff" onClick={imgfake}>    
-                                <div id='fakebox'>파일 선택</div>
-                                <span id='fake'>{imgname}</span>
+                                    <span id='fakebox'>파일 선택 </span> 
+                                    <span id='fake'>{imgname}</span>
+                                    <input id='real' name="c_imgsrc" type="file" onChange={onChangeImg}/>
                                 </p>
-                                <input id='real' name="c_imgsrc" type="file" onChange={onChangeImg}/>
                             </td>
                         </tr>
                         <tr>
