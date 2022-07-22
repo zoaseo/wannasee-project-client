@@ -1,0 +1,84 @@
+#create_concert {
+    height: 1400px;
+    background-color:#FEBF63;
+    padding-top: 60px;
+}
+#create_concert form{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#create_concert form table {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 25px;
+    font-size: 16px;
+    padding-bottom: 80px;
+}
+#create_concert form table th{
+    padding: 40px 0;
+    font-size: 24px;
+}
+#create_concert form table td {
+    padding-left: 70px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#create_concert textarea {
+    width: 500px;
+    height: 200px;
+    padding: 3px;
+    resize: none;
+}
+#create_concert input {
+    width: 350px;
+    height: 40px;
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    padding: 3px;
+    border-bottom: 5px solid #FEBF63;
+}
+#create_concert #imgimgimg input {
+    border: none;
+    width: 350px;
+    height: 40px;
+}
+#create_concert .radios input{
+    width: 13px;
+    height: 13px;
+}
+input, textarea {
+    outline: none;
+    padding: 3px;
+}
+#con_desc {
+    height: 280px;
+}
+#create_concert #brntr {
+    text-align: center;
+}
+#create_concert #btntr #btns {
+    text-align: center;
+    padding-left: 0px
+}
+#create_concert button {
+    color: #fff;
+    background-color: black;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 4px 20px;
+    cursor: pointer;
+}
+input::placeholder {
+    font-size: 12px;
+}
+#disdis {
+    display: none;
+}

@@ -1,0 +1,47 @@
+#Mypage {
+    height: 850px;
+    background-color:#FEBF63;
+    padding-top: 60px;
+}
+#Mypage form{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#Mypage form table{
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 25px;
+    padding: 40px 20px;
+    font-size: 16px;
+    text-align: center;
+    padding-right: 50px;
+}
+#Mypage form table th{
+    padding: 10px 0;
+    padding-bottom: 40px;
+    font-size: 24px;
+}
+#table_tr {
+    font-weight: bold;
+}
+#Mypage form table tr {
+    height: 40px;
+}
+#noreserve {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+#delBtn Button {      
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    padding: 2px 5px;
+    cursor: pointer;
+}

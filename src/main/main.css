@@ -1,3 +1,136 @@
+#mainpage {
+    scroll-behavior: smooth;
+}
 #mainpage video{
     width: 100%;
+}
+#second_content {
+    background-color: snow;
+    height: 1300px;
+    position: relative;
+}
+#wtw {
+    font-size: 48px;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    padding-top: 160px;
+    margin-left: 280px;
+}
+#paragraph {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+#Cityimg {
+    position: absolute;
+    left: 1000px;
+    top: 300px;
+    width: 400px;
+    transform: rotate(-30deg);
+}
+#Cityimg img {
+    width: 100%;
+}
+#IUimg {
+    position: absolute;
+    left: 200px;
+    top: 670px;
+    width: 750px;
+}
+#IUimg img {
+    width: 100%;
+}
+#Twiceimg {
+    position: absolute;
+    right: 210px;
+    top: 210px;
+    width: 500px;
+}
+#Twiceimg img{
+    width: 100%;
+}
+#third_content {
+    height: 100vh;
+    background-color: black;
+}
+#third_content {
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+#third_content #third_slogan {
+    position: absolute;
+    top: 25%;
+    left: 18%;
+    font-size: 52px;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 3px;
+}
+#third_content #third_slogan2 {
+    position: absolute;
+    top: 32%;
+    left: 18%;
+    font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 2px;
+}
+#third_content #swiftarrow {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    width: 200px;
+    transform: rotate(-18deg);
+}
+#third_content #swiftarrow img {
+    width: 100%;
+}
+
+#circle_slogan {
+    position: absolute;
+    width: 400px;
+    top: 200px;
+    right: 300px;
+    animation: rotate_image 10s linear infinite;transform-origin: 50% 50%;
+}
+#circle_slogan img {
+    width: 100%;
+}
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#playing {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 330px;
+    right: 428px;
+    line-height: 25px;
+    padding: 50px 15px;
+    border-radius: 50%;
+    background-color: white;
+    animation:reve;
+}
+#playing:hover {
+    background-color: #ea4949;
+    color: white;
+}
+#WNNC {
+    position: absolute;
+    bottom: -10px;
+    left: -100px;
+    width: 1200px;
+}
+#WNNC img {
+    width: 100%;
+}
+.marquee-container {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    display: none;
+    margin-top: -5px;
+    font-size: 20px;
+    font-weight: bold;
 }
