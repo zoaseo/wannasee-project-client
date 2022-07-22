@@ -9,6 +9,7 @@ const MypageComponent = ({data}) => {
             <td>{data.user_date}</td>
             <td>{data.user_start}</td>
             <td>{data.user_num}</td>
+            <td><button>삭제</button></td>
         </tr>
     );
 };
