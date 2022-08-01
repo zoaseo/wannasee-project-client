@@ -11,6 +11,7 @@ const MainPage = () => {
             duration : 1500
         });
     });
+
     return (
         <div id="mainpage" >
             <video loop autoPlay muted>

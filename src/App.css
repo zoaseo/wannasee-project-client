@@ -3,6 +3,11 @@
 li { list-style: none; }
 a { text-decoration: none; color: inherit;}
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .Allpage {
   background-color: #fff;
   font-family: 'Noto Sans KR', sans-serif;
@@ -16,7 +21,7 @@ a { text-decoration: none; color: inherit;}
 .Allpage .pageinner {
   display: flex;
 }
-.Allpage #all_div {
+.Allpage .all_div {
   width: 20%;
   text-align: left;
   font-size: 24px;
@@ -24,24 +29,24 @@ a { text-decoration: none; color: inherit;}
   z-index: 1;
   position: relative;
 }
-.Allpage #all_ul {
+.Allpage .all_ul {
   position: fixed;
   left: 120px;
   top: 50%;
   transform: translateY(-50%);
 }
-.Allpage #all_ul li{
+.Allpage .all_ul li{
   transition: 0.3s;
 }
-.Allpage #all_ul > li:hover{
+.Allpage .all_ul > li:hover{
   color: #ea4949;
 }
-.Allpage #all_ul #monthly:hover #monthdiv{
+.Allpage .all_ul #monthly:hover #monthdiv{
   color: black;
 }
-.Allpage #all_ul #monthly #monthdiv li:hover{
+.Allpage .all_ul #monthly #monthdiv li:hover{
   color: #ea4949;
-} 
+}
 
 .component {
   width: 100%;
@@ -138,7 +143,7 @@ a { text-decoration: none; color: inherit;}
     height: 40px;
     position: relative;
   }
-  
+ 
   .cube1, .cube2 {
     background-color: #333;
     width: 15px;
@@ -146,37 +151,37 @@ a { text-decoration: none; color: inherit;}
     position: absolute;
     top: 0;
     left: 0;
-    
+   
     -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
     animation: sk-cubemove 1.8s infinite ease-in-out;
   }
-  
+ 
   .cube2 {
     -webkit-animation-delay: -0.9s;
     animation-delay: -0.9s;
   }
-  
+ 
   @-webkit-keyframes sk-cubemove {
     25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
     50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
     75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
     100% { -webkit-transform: rotate(-360deg) }
   }
-  
+ 
   @keyframes sk-cubemove {
-    25% { 
+    25% {
       transform: translateX(42px) rotate(-90deg) scale(0.5);
       -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-    } 50% { 
+    } 50% {
       transform: translateX(42px) translateY(42px) rotate(-179deg);
       -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
-    } 50.1% { 
+    } 50.1% {
       transform: translateX(42px) translateY(42px) rotate(-180deg);
       -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-    } 75% { 
+    } 75% {
       transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
       -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-    } 100% { 
+    } 100% {
       transform: rotate(-360deg);
       -webkit-transform: rotate(-360deg);
     }
@@ -208,4 +213,85 @@ a { text-decoration: none; color: inherit;}
 }
 .red {
   color: #ea4949;
+}
+
+/* 반응형 구현 */
+@media screen and (min-width: 361px) and (max-width: 767px) {
+  html, body {
+    width: 100%;
+    /* overflow-x: hidden; */
+  }
+  /* 장르 페이지 구현 */
+  .Allpage .pageinner {
+    display: block;
+  }
+  .Allpage .all_div {
+    width: 100%;
+    padding-bottom: 80px;
+  }
+  .Allpage .all_ul {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    display: flex;
+  }
+  .Allpage .all_ul li {
+    margin: 0 20px;
+  }
+  .AllContent {
+    width: 43%;
+    margin-right: 3.5%;
+  }
+}
+@media screen and (max-width: 360px) {
+  html, body {
+    width: 100%;
+    /* overflow-x: hidden; */
+  }
+  /* 장르 페이지 구현 */
+  .Allpage .pageinner {
+    display: block;
+  }
+  .Allpage .all_div {
+    width: 80%;
+    padding-bottom: 80px;
+  }
+  .Allpage .all_ul {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    display: flex;
+  }
+  .Allpage .all_ul {
+    width: 450px
+  }
+  .Allpage .all_ul li {
+    font-size: 18px;
+    margin: 0 8px;
+  }
+  .AllContent {
+    width: 43%;
+    margin-right: 3.5%;
+  }
+  #small_detail {
+    width: 70%;
+  }
+  #godetail {
+    margin-left: 15px;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  #small_ticket_icon img {
+    width: 80%;
+    padding-top: 5px;
+    padding-left: 2px;
+    margin-left: 5px;
+  }
+  .AllContent .span_title {
+    font-size: 18px;
+  }
+  .AllContent {
+    height: 400px;
+  }
 }
