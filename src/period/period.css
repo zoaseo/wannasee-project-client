@@ -35,7 +35,7 @@
         width: 100px;
     }
 }
-@media screen and (max-width: 360px) {
+/* @media screen and (max-width: 360px) {
     #memberLogin form table td {
         padding-left: 120px;
         padding-right: 1px;
@@ -43,4 +43,4 @@
     #memberLogin form table td:nth-child(1) {
         padding-bottom: 70px;
     }
-}
+} */

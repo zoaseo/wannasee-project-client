@@ -60,7 +60,7 @@ const Detailconcert = () => {
                 console.log(e);
             })
             navigate(`/mypage/${idid}`);
-        } 
+        }
          else {
             if(idid) alert("예매가 취소되었습니다.");
             else alert('로그인 후 이용바랍니다.')
@@ -89,15 +89,14 @@ const Detailconcert = () => {
     if(!concert) return null;
     return (
         <div>
-
             <div id="detail_concert">
                 <div id='btns'>
-                {idid === 'admin' ?  <button><Link to={`/editConcert/${id}`}>수정</Link></button> : ''} 
-                {idid === 'admin' ?  <button onClick={onDelete}>삭제</button> : ''} 
+                {idid === 'admin' ?  <button><Link to={`/editConcert/${id}`}>수정</Link></button> : ''}
+                {idid === 'admin' ?  <button onClick={onDelete}>삭제</button> : ''}
                 </div>
                 <div id="left_detail">
-                    
-                    <div id="detail_img"><img src={`../${concert.imgsrc}`} alt="singer_pic" /></div>
+                    <div id="detail_img"> <img src = {`${API_URL}/upload/${concert.imgsrc}`} alt="img" /></div>
+                    {/* <div ><img src={`../${concert.imgsrc}`} alt="singer_pic" /></div> */}
                 </div>
                 <div id="right_detail">
                     <span id="span_title">{concert.title}</span>
