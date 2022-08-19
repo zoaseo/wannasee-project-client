@@ -30,11 +30,11 @@ const MyPage = () => {
                     </tr>
                     <tr id="table_tr">
                         <td>제목</td>
-                        <td>지역</td>
+                        <td className='width'>지역</td>
                         <td>장소</td>
                         <td>날짜</td>
-                        <td>시작시간</td>
-                        <td>수량</td>
+                        <td className='width'>시작시간</td>
+                        <td className='width'>수량</td>
                     </tr>
                     {datas.length === 0 ? <tr><td id="noreserve" colSpan={6}>🤔 예매내역이 없습니다.</td></tr>
                      : datas.map((data, index)=>(<MypageComponent key={index} data={data}/> ))}

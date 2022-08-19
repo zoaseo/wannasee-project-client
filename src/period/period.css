@@ -1,6 +1,6 @@
-@media screen and (min-width: 361px) and (max-width: 767px) {
+/* @media screen and (min-width: 361px) and (max-width: 767px) { */
     /* 기간 페이지 구현 */
-    .Allpage .period_ul #monthdiv{
+    /* .Allpage .period_ul #monthdiv{
         height: 80px;
         opacity: 1;
         padding-left: 0;
@@ -34,7 +34,7 @@
     #mo_p li {
         width: 100px;
     }
-}
+} */
 /* @media screen and (max-width: 360px) {
     #memberLogin form table td {
         padding-left: 120px;

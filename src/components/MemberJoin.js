@@ -212,7 +212,7 @@ const MemberJoin = () => {
                             <td>아이디</td>
                             <td>
                                 <input type="text" id="id" name="id" value={formData.id} onChange={onChange}
-                                placeholder="영문/숫자 모두 포함, 8~12자 이내로 입력"/>
+                                placeholder="영문/숫자 모두 포함, 8~12자"/>
                                 <span id ="duCk" onClick={(e)=>{OnIdCh(e);}}>👈 중복확인</span>
                             </td>
                         </tr>

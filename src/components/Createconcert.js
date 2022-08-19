@@ -178,7 +178,8 @@ const Createconcert = () => {
                             <td>지역2</td>
                             <td>
                                 <input name="c_rank_location" type="text" value={formData.c_rank_location} onChange={onChange}
-                                placeholder="서울:1 / 부산:2 / 대구:3 / 인천:4 / 광주:5 / 대전:6 / 울산:7 / 기타:8 "/>
+                                />
+                                <span id="re_span">서울:1 / 부산:2 / 대구:3 / 인천:4 / 광주:5 / 대전:6 / 울산:7 / 기타:8</span>
                             </td>
                         </tr>
                         <tr>
